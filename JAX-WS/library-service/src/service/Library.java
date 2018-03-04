@@ -6,37 +6,47 @@ import models.Book;
 import models.Member;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Library implements LibraryService {
 
-    Library(){
+    public static List<Book> books = Arrays.asList(new Book("Oven attacks", 40),
+            new Book("Orange juice", 23),
+            new Book("The notepad", 24));
 
-    }
-    List<Book> books;
+    public static List<Member> members = new ArrayList<>();
 
     @Override
     public List<Book> getAllBooks() {
-        return null;
+        return books;
     }
 
     @Override
     public Book getBookByName(String bookName) {
+        for (Book book : books) {
+            if (book.getName().equals(bookName)) {
+                return book;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Book> getBooksCheaperThan(double price) {
+
         return null;
     }
 
     @Override
     public Member registerMember(Member member) {
-        return null;
+        members.add(member);
+
+        return member;
     }
 
     @Override
-    public Member getMemberByID(int memberID) {
+    public Member getOldestMember(int memberID) {
         return null;
     }
 }

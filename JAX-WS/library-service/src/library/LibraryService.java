@@ -16,7 +16,7 @@ public interface LibraryService {
 
     Member registerMember(Member member);
 
-    Member getMemberByID(int memberID);
+    Member getOldestMember(int memberID);
 
 
 }
