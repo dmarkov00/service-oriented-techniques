@@ -5,10 +5,13 @@ import library.LibraryService;
 import models.Book;
 import models.Member;
 
+import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+@WebService(endpointInterface = "service.Library")
 public class Library implements LibraryService {
 
     private static List<Book> books;
