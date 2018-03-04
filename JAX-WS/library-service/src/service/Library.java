@@ -11,11 +11,16 @@ import java.util.List;
 
 public class Library implements LibraryService {
 
-    public static List<Book> books = Arrays.asList(new Book("Oven attacks", 40),
-            new Book("Orange juice", 23),
-            new Book("The notepad", 24));
+    private static List<Book> books;
 
-    public static List<Member> members = new ArrayList<>();
+    private static List<Member> members;
+
+    public Library() {
+        books = Arrays.asList(new Book("Oven attacks", 40, "Drama"),
+                new Book("Orange juice", 23, "Comedy"),
+                new Book("The notepad", 24, "Fantasy"));
+        members = new ArrayList<>();
+    }
 
     @Override
     public List<Book> getAllBooks() {
@@ -34,8 +39,13 @@ public class Library implements LibraryService {
 
     @Override
     public List<Book> getBooksCheaperThan(double price) {
-
-        return null;
+        List<Book> cheapBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getPrice() < price) {
+                cheapBooks.add(book);
+            }
+        }
+        return cheapBooks;
     }
 
     @Override
@@ -46,7 +56,25 @@ public class Library implements LibraryService {
     }
 
     @Override
-    public Member getOldestMember(int memberID) {
+    public Member getMemberByID(int memberID) {
+        for (Member member : members) {
+            if (member.getMemberID() == memberID) {
+                return member;
+            }
+        }
         return null;
     }
+
+    @Override
+    public List<Book> filterByGenre(String genre) {
+        List<Book> filteredBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getGenre().equals(genre)) {
+                filteredBooks.add(book);
+            }
+        }
+        return filteredBooks;
+    }
+
+
 }

@@ -16,7 +16,8 @@ public interface LibraryService {
 
     Member registerMember(Member member);
 
-    Member getOldestMember(int memberID);
+    Member getMemberByID(int memberID);
 
+    List<Book> filterByGenre(String genre);
 
 }
