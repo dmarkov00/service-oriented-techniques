@@ -30,7 +30,8 @@ public class ServiceManager {
                 }
 
                 System.out.println();
-                System.out.println("Press enter to continue...");
+                System.out.println("Press enter to read instructions again...");
+
 
                 break;
 
@@ -46,14 +47,15 @@ public class ServiceManager {
                 System.out.println("Genre: " + book.getGenre());
                 System.out.println("Price: " + book.getPrice());
                 System.out.println();
-                System.out.println("Press enter to continue...");
+                System.out.println("Press enter to read instructions again...");
+
                 break;
             case "3":
                 System.out.println("Input maximum price:");
                 System.out.println();
 
                 String maxPrice = scan.nextLine();
-                books = library.getBooksCheaperThan(Double.parseDouble(maxPrice);
+                books = library.getBooksCheaperThan(Double.parseDouble(maxPrice));
                 System.out.println("The books cheaper than " + maxPrice + " euro are:");
 
                 for (Book b : books) {
@@ -61,7 +63,8 @@ public class ServiceManager {
                 }
 
                 System.out.println();
-                System.out.println("Press enter to continue...");
+                System.out.println("Press enter to read instructions again...");
+
                 break;
             case "4":
                 Member member = new Member();
@@ -87,12 +90,30 @@ public class ServiceManager {
 
                 Member newMember = library.registerMember(member);
                 System.out.println("Congrats " + newMember.getName() + " for joining the library");
-               
+
                 System.out.println();
-                System.out.println("Press enter to continue...");
+                System.out.println("Press enter to read instructions again...");
 
                 break;
             case "5":
+                System.out.println("Input user name:");
+                System.out.println();
+                String userName1 = scan.nextLine();
+
+                System.out.println("Input password:");
+                System.out.println();
+                String password1 = scan.nextLine();
+
+
+                Member member1 = library.getMember(userName1, password1);
+
+                System.out.println("Member data:");
+                System.out.println();
+                System.out.println("Name: " + member1.getName());
+                System.out.println("Name: " + member1.getAge());
+
+                System.out.println();
+                System.out.println("Press enter to read instructions again...");
 
                 break;
             case "":
