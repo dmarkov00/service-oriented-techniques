@@ -73,11 +73,17 @@ public class ServiceManager {
 
         String bookName = scan.nextLine();
         Book book = library.getBookByName(bookName);
-        System.out.println("Book data:");
-        System.out.println();
-        System.out.println("Name: " + book.getName());
-        System.out.println("Genre: " + book.getGenre());
-        System.out.println("Price: " + book.getPrice());
+
+        if (book != null) {
+            System.out.println("Book data:");
+            System.out.println();
+            System.out.println("Name: " + book.getName());
+            System.out.println("Genre: " + book.getGenre());
+            System.out.println("Price: " + book.getPrice());
+
+        } else {
+            System.out.println("Nothing found.");
+        }
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
 
@@ -87,14 +93,30 @@ public class ServiceManager {
         System.out.println("Input maximum price:");
         System.out.println();
 
+        List<Book> books;
         String maxPrice = scan.nextLine();
-        List<Book> books = library.getBooksCheaperThan(Double.parseDouble(maxPrice));
-        System.out.println("The books cheaper than " + maxPrice + " euro are:");
-        System.out.println();
+        try {
+            books = library.getBooksCheaperThan(Double.parseDouble(maxPrice));
 
-        for (Book book : books) {
-            System.out.println(book.getName());
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper number.");
+            System.out.println();
+            System.out.println("Press enter to read instructions again or proceed with new input...");
+            return;
         }
+
+
+        if (books != null) {
+            System.out.println("The books cheaper than " + maxPrice + " euro are:");
+            System.out.println();
+
+            for (Book book : books) {
+                System.out.println(book.getName());
+            }
+        } else {
+            System.out.println("We don't sell that cheap books.");
+        }
+
 
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
@@ -122,11 +144,22 @@ public class ServiceManager {
         System.out.println();
 
         String age = scan.nextLine();
+        try {
+            member.setAge(Integer.parseInt(age));
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper number.");
+            System.out.println();
+            System.out.println("Press enter to read instructions again or proceed with new input...");
+            return;
+        }
 
-        member.setAge(Integer.parseInt(age));
 
         Member newMember = library.registerMember(member);
-        System.out.println("Congrats " + newMember.getName() + " for joining the library.");
+        if (newMember != null) {
+            System.out.println("Congrats " + newMember.getName() + " for joining the library.");
+        } else {
+            System.out.println("Error while registering.");
+        }
 
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
@@ -144,12 +177,16 @@ public class ServiceManager {
 
 
         Member member = library.getMember(userName, password);
+        if (member != null) {
 
-        System.out.println("Member data:");
-        System.out.println();
-        System.out.println("Name: " + member.getName());
-        System.out.println("Age: " + member.getAge());
 
+            System.out.println("Member data:");
+            System.out.println();
+            System.out.println("Name: " + member.getName());
+            System.out.println("Age: " + member.getAge());
+        }else{
+            System.out.println("No such member.");
+        }
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
 
