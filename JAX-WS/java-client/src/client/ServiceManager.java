@@ -60,7 +60,7 @@ public class ServiceManager {
         }
 
         System.out.println();
-        System.out.println("Press enter to read instructions again...");
+        System.out.println("Press enter to read instructions again or proceed with new input...");
     }
 
     private void getBookByName() {
@@ -75,7 +75,8 @@ public class ServiceManager {
         System.out.println("Genre: " + book.getGenre());
         System.out.println("Price: " + book.getPrice());
         System.out.println();
-        System.out.println("Press enter to read instructions again...");
+        System.out.println("Press enter to read instructions again or proceed with new input...");
+
     }
 
     private void getBooksCheaperThan() {
@@ -91,11 +92,13 @@ public class ServiceManager {
         }
 
         System.out.println();
-        System.out.println("Press enter to read instructions again...");
+        System.out.println("Press enter to read instructions again or proceed with new input...");
+
     }
 
     private void registerMember() {
         Member member = new Member();
+
 
         System.out.println("Input user name:");
         System.out.println();
@@ -110,37 +113,40 @@ public class ServiceManager {
         member.setPassword(password);
 
 
-        System.out.println("Input user name:");
+        System.out.println("Input age:");
         System.out.println();
 
         String age = scan.nextLine();
+
         member.setAge(Integer.parseInt(age));
 
         Member newMember = library.registerMember(member);
         System.out.println("Congrats " + newMember.getName() + " for joining the library");
 
         System.out.println();
-        System.out.println("Press enter to read instructions again...");
+        System.out.println("Press enter to read instructions again or proceed with new input...");
+
     }
 
     private void getMember() {
         System.out.println("Input user name:");
         System.out.println();
-        String userName1 = scan.nextLine();
+        String userName = scan.nextLine();
 
         System.out.println("Input password:");
         System.out.println();
-        String password1 = scan.nextLine();
+        String password = scan.nextLine();
 
 
-        Member member1 = library.getMember(userName1, password1);
+        Member member = library.getMember(userName, password);
 
         System.out.println("Member data:");
         System.out.println();
-        System.out.println("Name: " + member1.getName());
-        System.out.println("Name: " + member1.getAge());
+        System.out.println("Name: " + member.getName());
+        System.out.println("Age: " + member.getAge());
 
         System.out.println();
-        System.out.println("Press enter to read instructions again...");
+        System.out.println("Press enter to read instructions again or proceed with new input...");
+
     }
 }
