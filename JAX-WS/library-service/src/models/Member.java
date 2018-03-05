@@ -5,6 +5,10 @@ public class Member {
     private String name;
     private int age;
 
+    public Member() {
+
+    }
+
     public Member(int memberID, String name, int age) {
         this.memberID = memberID;
         this.name = name;

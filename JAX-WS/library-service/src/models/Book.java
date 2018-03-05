@@ -8,6 +8,10 @@ public class Book implements Serializable {
     private String genre;
     private double price;
 
+    public Book() {
+
+    }
+
     public Book(String name, double price, String genre) {
         this.name = name;
         this.price = price;
