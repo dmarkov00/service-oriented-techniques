@@ -33,12 +33,16 @@ public class ServiceManager {
 
                 break;
             case "4":
-                registerMember();
+                filterByGenre();
 
                 break;
             case "5":
+                registerMember();
 
+                break;
+            case "6":
                 getMember();
+
                 break;
             case "":
                 ConsoleVisualizer.printInstructions();
@@ -86,9 +90,10 @@ public class ServiceManager {
         String maxPrice = scan.nextLine();
         List<Book> books = library.getBooksCheaperThan(Double.parseDouble(maxPrice));
         System.out.println("The books cheaper than " + maxPrice + " euro are:");
+        System.out.println();
 
-        for (Book b : books) {
-            System.out.println(b.getName());
+        for (Book book : books) {
+            System.out.println(book.getName());
         }
 
         System.out.println();
@@ -121,7 +126,7 @@ public class ServiceManager {
         member.setAge(Integer.parseInt(age));
 
         Member newMember = library.registerMember(member);
-        System.out.println("Congrats " + newMember.getName() + " for joining the library");
+        System.out.println("Congrats " + newMember.getName() + " for joining the library.");
 
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
@@ -144,6 +149,23 @@ public class ServiceManager {
         System.out.println();
         System.out.println("Name: " + member.getName());
         System.out.println("Age: " + member.getAge());
+
+        System.out.println();
+        System.out.println("Press enter to read instructions again or proceed with new input...");
+
+    }
+
+    private void filterByGenre() {
+        System.out.println("Input genre:");
+        System.out.println();
+        String genre = scan.nextLine();
+        List<Book> books = library.filterByGenre(genre);
+        System.out.println("Our books with genre " + genre + " are.");
+        System.out.println();
+
+        for (Book book : books) {
+            System.out.println(book.getName());
+        }
 
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
