@@ -19,8 +19,11 @@ public class LibraryClient {
         Scanner scan = new Scanner(System.in);
 
         // Scanning for values from the console
-        String input = scan.nextLine();
-        serviceManager.manageInput(input);
+        while (true) {
+            String input = scan.nextLine();
+            serviceManager.manageInput(input);
+        }
+
 
     }
 }

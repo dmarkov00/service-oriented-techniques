@@ -10,7 +10,7 @@ public class ConsoleVisualizer {
         System.out.println("What functionality do we provide?");
         System.out.println();
         System.out.println("-You can see all the books in the library.");
-        System.out.println("-Get more information about book by using the name.");
+        System.out.println("-Get more information about book by inputting the name.");
         System.out.println("-Get books that are cheaper than certain price.");
         System.out.println("-Register as a member.");
         System.out.println("-Retrieve personal information by entering username and password.");
@@ -32,6 +32,10 @@ public class ConsoleVisualizer {
         System.out.println("Press 4: - to register a member");
 
         System.out.println("Press 5: - to retrieve personal member information");
+
+        System.out.println();
+        System.out.println("Waiting for input...");
+
 
 
     }
