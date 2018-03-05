@@ -11,18 +11,16 @@ public class LibraryClient {
 
     public static void main(String[] args) {
 
-        // Link the library service
-        LibraryService libraryService = new LibraryService();
-        Library library = libraryService.getLibraryPort();
+        ServiceManager serviceManager = new ServiceManager();
 
         // Initialization
         ConsoleVisualizer.printIntroduction();
         ConsoleVisualizer.printInstructions();
+        Scanner scan = new Scanner(System.in);
 
-        
+        // Scanning for values from the console
+        String input = scan.nextLine();
+        serviceManager.manageInput(input);
 
-        Book b = library.getBookByName("Orange juice");
-
-        System.out.println(b.getName());
     }
 }
