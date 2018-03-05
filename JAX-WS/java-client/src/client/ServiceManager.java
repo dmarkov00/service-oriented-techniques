@@ -3,6 +3,7 @@ package client;
 import service.Book;
 import service.Library;
 import service.LibraryService;
+import service.Member;
 
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +35,7 @@ public class ServiceManager {
                 break;
 
             case "2":
-                System.out.println("Input book name");
+                System.out.println("Input book name:");
                 System.out.println();
 
                 String bookName = scan.nextLine();
@@ -48,7 +49,7 @@ public class ServiceManager {
                 System.out.println("Press enter to continue...");
                 break;
             case "3":
-                System.out.println("Input maximum price");
+                System.out.println("Input maximum price:");
                 System.out.println();
 
                 String maxPrice = scan.nextLine();
@@ -63,6 +64,32 @@ public class ServiceManager {
                 System.out.println("Press enter to continue...");
                 break;
             case "4":
+                Member member = new Member();
+
+                System.out.println("Input user name:");
+                System.out.println();
+
+                String userName = scan.nextLine();
+                member.setName(userName);
+
+                System.out.println("Input password:");
+                System.out.println();
+
+                String password = scan.nextLine();
+                member.setPassword(password);
+
+
+                System.out.println("Input user name:");
+                System.out.println();
+
+                String age = scan.nextLine();
+                member.setAge(Integer.parseInt(age));
+
+                Member newMember = library.registerMember(member);
+                System.out.println("Congrats " + newMember.getName() + " for joining the library");
+               
+                System.out.println();
+                System.out.println("Press enter to continue...");
 
                 break;
             case "5":
