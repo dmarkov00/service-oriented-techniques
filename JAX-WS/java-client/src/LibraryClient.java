@@ -1,6 +1,7 @@
 import service.Book;
 import service.Library;
 import service.LibraryService;
+import service.Member;
 
 public class LibraryClient {
 
@@ -9,8 +10,9 @@ public class LibraryClient {
 
         Library library = libraryService.getLibraryPort();
 
-        Book b = library.getBookByName("Oven attacks");
 
-        System.out.println(b);
+        Book b = library.getBookByName("Orange juice");
+
+        System.out.println(b.getName());
     }
 }
