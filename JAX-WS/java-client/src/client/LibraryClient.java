@@ -16,10 +16,10 @@ public class LibraryClient {
         Library library = libraryService.getLibraryPort();
 
         // Initialization
-        Scanner scan = new Scanner(System.in);
-        String line = scan.nextLine();
         ConsoleVisualizer.printIntroduction();
+        ConsoleVisualizer.printInstructions();
 
+        
 
         Book b = library.getBookByName("Orange juice");
 

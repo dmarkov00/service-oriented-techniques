@@ -84,18 +84,21 @@ public interface Library {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @return
      *     returns service.Member
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMemberByID", targetNamespace = "http://service/", className = "service.GetMemberByID")
-    @ResponseWrapper(localName = "getMemberByIDResponse", targetNamespace = "http://service/", className = "service.GetMemberByIDResponse")
-    @Action(input = "http://service/Library/getMemberByIDRequest", output = "http://service/Library/getMemberByIDResponse")
-    public Member getMemberByID(
+    @RequestWrapper(localName = "getMember", targetNamespace = "http://service/", className = "service.GetMember")
+    @ResponseWrapper(localName = "getMemberResponse", targetNamespace = "http://service/", className = "service.GetMemberResponse")
+    @Action(input = "http://service/Library/getMemberRequest", output = "http://service/Library/getMemberResponse")
+    public Member getMember(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 

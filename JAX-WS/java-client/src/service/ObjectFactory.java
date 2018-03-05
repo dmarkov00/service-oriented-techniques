@@ -25,15 +25,15 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetBookByName_QNAME = new QName("http://service/", "getBookByName");
-    private final static QName _GetMemberByIDResponse_QNAME = new QName("http://service/", "getMemberByIDResponse");
     private final static QName _FilterByGenre_QNAME = new QName("http://service/", "filterByGenre");
     private final static QName _GetAllBooks_QNAME = new QName("http://service/", "getAllBooks");
     private final static QName _FilterByGenreResponse_QNAME = new QName("http://service/", "filterByGenreResponse");
+    private final static QName _GetMemberResponse_QNAME = new QName("http://service/", "getMemberResponse");
     private final static QName _RegisterMember_QNAME = new QName("http://service/", "registerMember");
     private final static QName _RegisterMemberResponse_QNAME = new QName("http://service/", "registerMemberResponse");
     private final static QName _GetBooksCheaperThanResponse_QNAME = new QName("http://service/", "getBooksCheaperThanResponse");
-    private final static QName _GetMemberByID_QNAME = new QName("http://service/", "getMemberByID");
     private final static QName _GetBookByNameResponse_QNAME = new QName("http://service/", "getBookByNameResponse");
+    private final static QName _GetMember_QNAME = new QName("http://service/", "getMember");
     private final static QName _GetAllBooksResponse_QNAME = new QName("http://service/", "getAllBooksResponse");
     private final static QName _GetBooksCheaperThan_QNAME = new QName("http://service/", "getBooksCheaperThan");
 
@@ -77,14 +77,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMemberByIDResponse }
-     * 
-     */
-    public GetMemberByIDResponse createGetMemberByIDResponse() {
-        return new GetMemberByIDResponse();
-    }
-
-    /**
      * Create an instance of {@link GetAllBooksResponse }
      * 
      */
@@ -109,11 +101,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMemberByID }
+     * Create an instance of {@link GetMember }
      * 
      */
-    public GetMemberByID createGetMemberByID() {
-        return new GetMemberByID();
+    public GetMember createGetMember() {
+        return new GetMember();
     }
 
     /**
@@ -122,6 +114,14 @@ public class ObjectFactory {
      */
     public GetBooksCheaperThanResponse createGetBooksCheaperThanResponse() {
         return new GetBooksCheaperThanResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMemberResponse }
+     * 
+     */
+    public GetMemberResponse createGetMemberResponse() {
+        return new GetMemberResponse();
     }
 
     /**
@@ -166,15 +166,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMemberByIDResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service/", name = "getMemberByIDResponse")
-    public JAXBElement<GetMemberByIDResponse> createGetMemberByIDResponse(GetMemberByIDResponse value) {
-        return new JAXBElement<GetMemberByIDResponse>(_GetMemberByIDResponse_QNAME, GetMemberByIDResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FilterByGenre }{@code >}}
      * 
      */
@@ -199,6 +190,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "filterByGenreResponse")
     public JAXBElement<FilterByGenreResponse> createFilterByGenreResponse(FilterByGenreResponse value) {
         return new JAXBElement<FilterByGenreResponse>(_FilterByGenreResponse_QNAME, FilterByGenreResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMemberResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "getMemberResponse")
+    public JAXBElement<GetMemberResponse> createGetMemberResponse(GetMemberResponse value) {
+        return new JAXBElement<GetMemberResponse>(_GetMemberResponse_QNAME, GetMemberResponse.class, null, value);
     }
 
     /**
@@ -229,21 +229,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMemberByID }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service/", name = "getMemberByID")
-    public JAXBElement<GetMemberByID> createGetMemberByID(GetMemberByID value) {
-        return new JAXBElement<GetMemberByID>(_GetMemberByID_QNAME, GetMemberByID.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetBookByNameResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://service/", name = "getBookByNameResponse")
     public JAXBElement<GetBookByNameResponse> createGetBookByNameResponse(GetBookByNameResponse value) {
         return new JAXBElement<GetBookByNameResponse>(_GetBookByNameResponse_QNAME, GetBookByNameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMember }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "getMember")
+    public JAXBElement<GetMember> createGetMember(GetMember value) {
+        return new JAXBElement<GetMember>(_GetMember_QNAME, GetMember.class, null, value);
     }
 
     /**
