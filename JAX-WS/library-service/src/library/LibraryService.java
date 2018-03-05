@@ -23,7 +23,7 @@ public interface LibraryService {
     Member registerMember(Member member);
 
     @WebMethod
-    Member getMemberByID(int memberID);
+    Member getMember(String name, String password);
 
     @WebMethod
     List<Book> filterByGenre(String genre);

@@ -59,9 +59,9 @@ public class Library implements LibraryService {
     }
 
     @Override
-    public Member getMemberByID(int memberID) {
+    public Member getMember(String name, String password) {
         for (Member member : members) {
-            if (member.getMemberID() == memberID) {
+            if (member.getPassword().equals(password) && member.getName().equals(name)) {
                 return member;
             }
         }
