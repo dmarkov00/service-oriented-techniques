@@ -16,15 +16,16 @@ public class ServiceManager {
     private Library library = libraryService.getLibraryPort();
 
     public void manageInput(String input) {
-
+        List<Book> books;
+        Book book;
         switch (input) {
             case "1":
 
-                List<Book> books = library.getAllBooks();
+                books = library.getAllBooks();
                 System.out.println("Our inventory: ");
                 System.out.println();
-                for (Book book : books) {
-                    System.out.println(book.getName());
+                for (Book b : books) {
+                    System.out.println(b.getName());
                 }
 
                 System.out.println();
@@ -37,7 +38,7 @@ public class ServiceManager {
                 System.out.println();
 
                 String bookName = scan.nextLine();
-                Book book = library.getBookByName(bookName);
+                book = library.getBookByName(bookName);
                 System.out.println("Book data:");
                 System.out.println();
                 System.out.println("Name: " + book.getName());
@@ -47,7 +48,19 @@ public class ServiceManager {
                 System.out.println("Press enter to continue...");
                 break;
             case "3":
+                System.out.println("Input maximum price");
+                System.out.println();
 
+                String maxPrice = scan.nextLine();
+                books = library.getBooksCheaperThan(Double.parseDouble(maxPrice);
+                System.out.println("The books cheaper than " + maxPrice + " euro are:");
+
+                for (Book b : books) {
+                    System.out.println(b.getName());
+                }
+
+                System.out.println();
+                System.out.println("Press enter to continue...");
                 break;
             case "4":
 
