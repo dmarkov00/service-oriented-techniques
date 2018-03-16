@@ -20,10 +20,16 @@
       <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+            <state relative-caret-position="758">
+              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1502#1503#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -42,7 +48,7 @@
       <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/library/models/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="476">
               <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="method#Book#0;class#Book#0" expanded="false" />
@@ -372,12 +378,12 @@
       <updated>1521191555555</updated>
       <workItem from="1521191559533" duration="1723000" />
       <workItem from="1521210021394" duration="4623000" />
-      <workItem from="1521227508499" duration="9521000" />
+      <workItem from="1521227508499" duration="11367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16392000" />
+    <option name="totallyTimeSpent" value="18238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1920" height="1056" extended-state="6" />
@@ -464,6 +470,12 @@
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -607,17 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/models/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="method#Book#0;class#Book#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/library/service/resources/BookResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -626,12 +627,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/models/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="method#Book#0;class#Book#0" expanded="false" />
+            <element signature="e#647#648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        <state relative-caret-position="758">
+          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
           </folding>
         </state>
       </provider>

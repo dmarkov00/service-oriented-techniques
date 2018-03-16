@@ -3,10 +3,7 @@ package library.service.resources;
 import library.models.Book;
 
 import javax.inject.Singleton;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,21 +38,30 @@ public class LibraryResources {
         return booksResult;
     }
 
+    @POST
+    @Path("books")
     public void addBook(Book book) {
-
+        books.add(book);
     }
 
     public Book getBookById(int id) {
 
+        for (Book book : books) {
+            if (book.getId() == id) {
+                return book;
+            }
+        }
         return null;
     }
 
+    @POST
+    @Path("books/{id}}")
     public void updateBookById(Book books) {
 
     }
 
     public void deleteBookById(int id) {
-
+        books.remove(id);
     }
 
 
