@@ -24,6 +24,5 @@ public class LibraryClient {
             serviceManager.manageInput(input);
         }
 
-
     }
 }
