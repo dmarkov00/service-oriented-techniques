@@ -11,7 +11,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         <!-- Register resources and providers under com.vogella.jersey.first package. -->
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>school.service.resources</param-value>
+            <param-value>library.service.resources</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

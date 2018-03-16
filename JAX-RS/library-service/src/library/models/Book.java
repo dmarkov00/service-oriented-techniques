@@ -8,23 +8,21 @@ public class Book {
     }
 
     public Book(String title, String genre, double price) {
+        idCount++;
         this.title = title;
         this.genre = genre;
         this.price = price;
-        id++;
+        this.id = idCount;
     }
 
     private String title;
     private String genre;
     private double price;
-    private static int id;
+    private int id;
+    private static int idCount;
 
-    public static int getId() {
+    public int getId() {
         return id;
-    }
-
-    public static void setId(int id) {
-        Book.id = id;
     }
 
     public String getTitle() {
