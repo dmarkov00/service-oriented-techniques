@@ -74,7 +74,7 @@ public class LibraryResources {
     public void deleteBookById(@PathParam("id") int id) {
         Book book = getBookWithId(id);
         if (book != null) {
-            books.remove(id);
+            books.remove(book);
         } else {
             throw new RuntimeException("Book with this id does not exist");
         }

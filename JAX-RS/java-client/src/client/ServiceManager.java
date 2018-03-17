@@ -43,7 +43,7 @@ public class ServiceManager {
                 break;
             case "5":
 
-
+                deleteBook();
                 break;
             case "6":
                 filterByGenre();
@@ -72,7 +72,7 @@ public class ServiceManager {
 
         Response response = serviceTarget.request().accept(MediaType.APPLICATION_JSON).get();
 
-        sendGetBooksRequest(response);
+        parseGetBooksResponse(response);
         ConsoleVisualizer.howToProceedInstructions();
     }
 
@@ -143,6 +143,25 @@ public class ServiceManager {
     }
 
     private void deleteBook() {
+        System.out.println("Input book id:");
+        System.out.println();
+        String bookId = scan.nextLine();
+        int bookIdInt;
+        try {
+            bookIdInt = Integer.parseInt(bookId);
+
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper id value(has to be an integer).");
+            ConsoleVisualizer.howToProceedInstructions();
+            return;
+        }
+
+        Response response = serviceTarget.path(bookIdInt + "").request().accept(MediaType.TEXT_PLAIN).delete();
+        if (response.getStatus() != Response.Status.OK.getStatusCode()) {
+            System.err.println(response.readEntity(String.class));
+        }
+        System.out.println("Book deleted!");
+        ConsoleVisualizer.howToProceedInstructions();
 
     }
 
@@ -157,27 +176,12 @@ public class ServiceManager {
         System.out.println("Our inventory: filtered by genre: ");
         System.out.println();
 
-        sendGetBooksRequest(response);
+        parseGetBooksResponse(response);
 
         ConsoleVisualizer.howToProceedInstructions();
 
     }
 
-    private void sendGetBooksRequest(Response response) {
-        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
-
-            GenericType<ArrayList<Book>> genericType = new GenericType<ArrayList<Book>>() {
-            };
-
-            ArrayList<Book> booksList = response.readEntity(genericType);
-            for (Book book : booksList) {
-                System.out.println(book.toString());
-            }
-
-        } else {
-            System.err.println(response.readEntity(String.class));
-        }
-    }
 
     private void filterByPrice() {
         System.out.println("Input price:");
@@ -190,7 +194,7 @@ public class ServiceManager {
         System.out.println("Our inventory: filtered by price: ");
         System.out.println();
 
-        sendGetBooksRequest(response);
+        parseGetBooksResponse(response);
 
         ConsoleVisualizer.howToProceedInstructions();
     }
@@ -210,9 +214,26 @@ public class ServiceManager {
         System.out.println("Our inventory: filtered by price: ");
         System.out.println();
 
-        sendGetBooksRequest(response);
+        parseGetBooksResponse(response);
 
         ConsoleVisualizer.howToProceedInstructions();
 
     }
+
+    private void parseGetBooksResponse(Response response) {
+        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+
+            GenericType<ArrayList<Book>> genericType = new GenericType<ArrayList<Book>>() {
+            };
+
+            ArrayList<Book> booksList = response.readEntity(genericType);
+            for (Book book : booksList) {
+                System.out.println(book.toString());
+            }
+
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+    }
+
 }
