@@ -44,6 +44,8 @@ public class ConsoleVisualizer {
 
         System.out.println("Press 8: - to filter by price and genre");
 
+        System.out.println("Press 9: - to ban people form the library");
+
         System.out.println();
         System.out.println("Waiting for input...");
 

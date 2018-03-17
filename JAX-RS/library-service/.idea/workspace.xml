@@ -20,10 +20,12 @@
       <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+            <state relative-caret-position="367">
+              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
                 <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
@@ -360,12 +362,12 @@
       <workItem from="1521191559533" duration="1723000" />
       <workItem from="1521210021394" duration="4623000" />
       <workItem from="1521227508499" duration="14334000" />
-      <workItem from="1521274255744" duration="25905000" />
+      <workItem from="1521274255744" duration="29913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47110000" />
+    <option name="totallyTimeSpent" value="51118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1920" height="1056" extended-state="6" />
@@ -456,6 +458,8 @@
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
             <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
@@ -721,10 +725,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="367">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
             <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />

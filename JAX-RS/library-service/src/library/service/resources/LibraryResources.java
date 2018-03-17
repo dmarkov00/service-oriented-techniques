@@ -22,7 +22,14 @@ public class LibraryResources {
     }
 
     private List<Book> books;
+    private List<String> bannedPeople = new ArrayList<>();
 
+    @POST
+    @Path("books/ban/")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public void addPersonToBannedFromLibraryList(@FormParam("name") String name) {
+        bannedPeople.add(name);
+    }
 
     @GET()
     @Path("books")

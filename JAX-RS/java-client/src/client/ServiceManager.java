@@ -3,6 +3,7 @@ package client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Form;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -53,8 +54,12 @@ public class ServiceManager {
             case "8":
                 filterByGenreAndPrice();
                 break;
+            case "9":
+                addPersonToBannedFromLibraryList();
+                break;
             case "":
-                ConsoleVisualizer.printInstructions();
+                testForm();
+//                ConsoleVisualizer.printInstructions();
 
                 break;
 
@@ -62,6 +67,38 @@ public class ServiceManager {
                 System.out.println();
                 System.out.println("Can not recognize command. Try again.");
         }
+    }
+
+    private void addPersonToBannedFromLibraryList() {
+        // Making use of the Form class
+        System.out.println("Input person name:");
+        System.out.println();
+        String personName = scan.nextLine();
+
+        Form form = new Form();
+
+        form.param("name", personName);
+
+        Entity<Form> entity = Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED);
+
+        Response response = serviceTarget.path("ban").request()
+                .accept(MediaType.TEXT_PLAIN)
+                .post(entity);
+
+        if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
+            System.out.println(personName + " - was banned from the library");
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+
+        ConsoleVisualizer.howToProceedInstructions();
+
+
+    }
+
+    private void testForm() {
+
+
     }
 
     private void updateBookById() {
@@ -96,7 +133,7 @@ public class ServiceManager {
         Book book;
 
         try {
-            book = new Book(Integer.parseInt(bookId), bookTitle, bookGenre, Double.parseDouble(bookPrice));
+            book = new Book(Integer.parseInt(bookupdateId), bookTitle, bookGenre, Double.parseDouble(bookPrice));
 
         } catch (NumberFormatException e) {
             System.out.println("You didn't enter a proper id or price values.");
@@ -105,7 +142,7 @@ public class ServiceManager {
         }
         Response response = serviceTarget.path(bookIdInt + "").request()
                 .accept(MediaType.TEXT_PLAIN)
-                .put(Entity.entity(book, MediaType.APPLICATION_JSON));
+                .put(Entity.entity(book, MediaType.APPLICATION_XML));
 
         if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
 

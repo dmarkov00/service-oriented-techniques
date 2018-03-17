@@ -37,9 +37,10 @@
       <file leaf-file-name="ServiceManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/ServiceManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
+            <state relative-caret-position="137">
+              <caret line="71" column="49" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="49" />
               <folding>
+                <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#getBookById#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
@@ -49,6 +50,16 @@
                 <element signature="method#filterByGenreAndPrice#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#parseGetBooksResponse#0;class#ServiceManager#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsoleVisualizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ConsoleVisualizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,9 +89,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/client/Main.java" />
-        <option value="$PROJECT_DIR$/src/client/ConsoleVisualizer.java" />
         <option value="$PROJECT_DIR$/src/client/ConfigureClient.java" />
         <option value="$PROJECT_DIR$/src/client/ServiceManager.java" />
+        <option value="$PROJECT_DIR$/src/client/ConsoleVisualizer.java" />
       </list>
     </option>
   </component>
@@ -285,12 +296,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521239961782</updated>
       <workItem from="1521239963048" duration="3227000" />
-      <workItem from="1521274257930" duration="28115000" />
+      <workItem from="1521274257930" duration="32817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31342000" />
+    <option name="totallyTimeSpent" value="36044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -304,7 +315,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -335,12 +346,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/client/ServiceManager.java</url>
-          <line>161</line>
+          <line>198</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -376,6 +387,7 @@
         <state relative-caret-position="391">
           <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
+            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#getBookById#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
@@ -408,14 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ConsoleVisualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="44" column="67" lean-forward="true" selection-start-line="44" selection-start-column="67" selection-end-line="44" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -462,11 +466,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ConsoleVisualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ServiceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
+        <state relative-caret-position="137">
+          <caret line="71" column="49" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="49" />
           <folding>
+            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#getBookById#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
