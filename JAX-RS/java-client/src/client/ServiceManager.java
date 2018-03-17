@@ -3,10 +3,12 @@ package client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -58,29 +60,27 @@ public class ServiceManager {
         }
     }
 
-    private List<Book> getBooks() {
+    private void getBooks() {
 
         System.out.println("Our inventory: ");
         System.out.println();
 
-        WebTarget operationTarget = serviceTarget;
-
-        // build the request: media type plain text
-        Invocation.Builder requestBuilder = operationTarget.request().accept(MediaType.APPLICATION_JSON);
-
-        // execute operation get
-        Response response = requestBuilder.get();
-
-        // read the result answer from the http response
-        String result = response.readEntity(String.class);
-//        ConsoleVisualizer.howToProceedInstructions();
+        Response response = serviceTarget.request().accept(MediaType.APPLICATION_JSON).get();
 
         if (response.getStatus() == Response.Status.OK.getStatusCode()) {
-            System.out.println(result);
+
+            GenericType<ArrayList<Book>> genericType = new GenericType<ArrayList<Book>>() {
+            };
+
+            ArrayList<Book> booksList = response.readEntity(genericType);
+            for (Book book : booksList) {
+                System.out.println(book.toString());
+            }
+
         } else {
-            System.err.println(result);
+            System.err.println(response.readEntity(String.class));
         }
-        return null;
+        ConsoleVisualizer.howToProceedInstructions();
     }
 
     private void getBookById() {

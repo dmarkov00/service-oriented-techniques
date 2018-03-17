@@ -42,7 +42,7 @@ public class LibraryResources {
     @Path("books")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public void addBook(Book book) {
-        books.add(book);
+        this.books.add(book);
     }
 
     @GET()
