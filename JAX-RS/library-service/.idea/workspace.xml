@@ -17,17 +17,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+            <state relative-caret-position="323">
+              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1149#1150#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1675#1676#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1250#1251#0" expanded="true" />
+                <element signature="e#1745#1746#0" expanded="true" />
+                <element signature="e#1777#1778#0" expanded="true" />
                 <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
               </folding>
@@ -35,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/library/models/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="method#Book#0;class#Book#0" expanded="false" />
                 <element signature="e#492#493#0" expanded="true" />
@@ -93,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/library/models/Library.java" />
         <option value="$PROJECT_DIR$/out/artifacts/library_service_war_exploded/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/library/service/resources/LibraryResources.java" />
         <option value="$PROJECT_DIR$/src/library/models/Book.java" />
+        <option value="$PROJECT_DIR$/src/library/service/resources/LibraryResources.java" />
       </list>
     </option>
   </component>
@@ -111,7 +110,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1612" />
@@ -138,24 +137,6 @@
             <path>
               <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
               <item name="library-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library-service" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library-service" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="library-service" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
@@ -402,15 +383,16 @@
       <workItem from="1521191559533" duration="1723000" />
       <workItem from="1521210021394" duration="4623000" />
       <workItem from="1521227508499" duration="14334000" />
-      <workItem from="1521274255744" duration="12799000" />
+      <workItem from="1521274255744" duration="13899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34004000" />
+    <option name="totallyTimeSpent" value="35104000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1920" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1920" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,7 +435,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java</url>
-          <line>49</line>
+          <line>50</line>
           <properties class="library.service.resources.LibraryResources" method="getBookById">
             <option name="EMULATED" value="true" />
           </properties>
@@ -505,10 +487,9 @@
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
           </folding>
@@ -672,26 +653,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
-            <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/library/models/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="method#Book#0;class#Book#0" expanded="false" />
             <element signature="e#492#493#0" expanded="true" />
@@ -710,6 +675,21 @@
             <element signature="e#1015#1016#0" expanded="true" />
             <element signature="e#1061#1062#0" expanded="true" />
             <element signature="e#1159#1160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
+            <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
           </folding>
         </state>
       </provider>

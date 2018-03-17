@@ -1,5 +1,6 @@
 package client;
 
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
@@ -98,6 +99,40 @@ public class ServiceManager {
         if (response.getStatus() == Response.Status.OK.getStatusCode()) {
 
             System.out.println(result.toString());
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+
+        ConsoleVisualizer.howToProceedInstructions();
+    }
+
+    private void addBook() {
+        System.out.println("Input book title:");
+        System.out.println();
+        String bookTitle = scan.nextLine();
+        System.out.println("Input book genre:");
+        System.out.println();
+        String bookGenre = scan.nextLine();
+
+        System.out.println("Input book price:");
+        System.out.println();
+        String bookPrice = scan.nextLine();
+        Book book;
+        try {
+            book = new Book(bookTitle, bookGenre, Double.parseDouble(bookPrice));
+
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper price value.");
+            ConsoleVisualizer.howToProceedInstructions();
+            return;
+        }
+        Response response = serviceTarget.request()
+                .accept(MediaType.TEXT_PLAIN)
+                .post(Entity.entity(book, MediaType.APPLICATION_JSON));
+
+        if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
+
+            System.out.println("Book " + book.getTitle() + " was added.");
         } else {
             System.err.println(response.readEntity(String.class));
         }

@@ -26,7 +26,7 @@ public class LibraryResources {
 
     @GET()
     @Path("books")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public List<Book> getAllBooks(@QueryParam("genre") String genre, @QueryParam("price") double price) {
         List<Book> booksResult = this.books;
         if (genre != null) {
@@ -40,6 +40,7 @@ public class LibraryResources {
 
     @POST
     @Path("books")
+    @Consumes(MediaType.APPLICATION_XML)
     public void addBook(Book book) {
         books.add(book);
     }
