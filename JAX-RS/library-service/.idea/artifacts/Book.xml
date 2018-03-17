@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Book">
+    <output-path>$PROJECT_DIR$/out/artifacts/Book</output-path>
+    <root id="archive" name="Book.jar">
+      <element id="directory" name="library">
+        <element id="directory" name="models">
+          <element id="file-copy" path="$PROJECT_DIR$/out/production/library-service/library/models/Book.class" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
