@@ -88,16 +88,13 @@ public class ServiceManager {
         System.out.println();
         String bookId = scan.nextLine();
 
-        WebTarget operationTarget = serviceTarget.path(bookId);
-
-        Invocation.Builder requestBuilder = operationTarget.request().accept(MediaType.APPLICATION_XML);
-
-        Response response = requestBuilder.get();
+        Response response = serviceTarget.path(bookId).request().accept(MediaType.APPLICATION_JSON).get();
 
         Book result = response.readEntity(Book.class);
 
         if (response.getStatus() == Response.Status.OK.getStatusCode()) {
-
+            System.out.println("Resulted book:");
+            System.out.println();
             System.out.println(result.toString());
         } else {
             System.err.println(response.readEntity(String.class));
