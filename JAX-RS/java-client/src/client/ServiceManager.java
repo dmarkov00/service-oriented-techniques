@@ -46,8 +46,13 @@ public class ServiceManager {
 
                 break;
             case "6":
-
-
+                filterByGenre();
+                break;
+            case "7":
+                filterByPrice();
+                break;
+            case "8":
+                filterByGenreAndPrice();
                 break;
             case "":
                 ConsoleVisualizer.printInstructions();
@@ -67,19 +72,7 @@ public class ServiceManager {
 
         Response response = serviceTarget.request().accept(MediaType.APPLICATION_JSON).get();
 
-        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
-
-            GenericType<ArrayList<Book>> genericType = new GenericType<ArrayList<Book>>() {
-            };
-
-            ArrayList<Book> booksList = response.readEntity(genericType);
-            for (Book book : booksList) {
-                System.out.println(book.toString());
-            }
-
-        } else {
-            System.err.println(response.readEntity(String.class));
-        }
+        sendGetBooksRequest(response);
         ConsoleVisualizer.howToProceedInstructions();
     }
 
@@ -135,5 +128,75 @@ public class ServiceManager {
         }
 
         ConsoleVisualizer.howToProceedInstructions();
+    }
+
+    private void filterByGenre() {
+        System.out.println("Input genre:");
+        System.out.println();
+        String genre = scan.nextLine();
+
+
+        Response response = serviceTarget.queryParam("genre", genre).request().accept(MediaType.APPLICATION_JSON).get();
+
+        System.out.println("Our inventory: filtered by genre: ");
+        System.out.println();
+
+        sendGetBooksRequest(response);
+
+        ConsoleVisualizer.howToProceedInstructions();
+
+    }
+
+    private void sendGetBooksRequest(Response response) {
+        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+
+            GenericType<ArrayList<Book>> genericType = new GenericType<ArrayList<Book>>() {
+            };
+
+            ArrayList<Book> booksList = response.readEntity(genericType);
+            for (Book book : booksList) {
+                System.out.println(book.toString());
+            }
+
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+    }
+
+    private void filterByPrice() {
+        System.out.println("Input price:");
+        System.out.println();
+        String price = scan.nextLine();
+
+
+        Response response = serviceTarget.queryParam("price", price).request().accept(MediaType.APPLICATION_JSON).get();
+
+        System.out.println("Our inventory: filtered by price: ");
+        System.out.println();
+
+        sendGetBooksRequest(response);
+
+        ConsoleVisualizer.howToProceedInstructions();
+    }
+
+    private void filterByGenreAndPrice() {
+        System.out.println("Input genre:");
+        System.out.println();
+        String genre = scan.nextLine();
+
+        System.out.println("Input price:");
+        System.out.println();
+        String price = scan.nextLine();
+
+
+        Response response = serviceTarget.queryParam("genre", genre).queryParam("price", price).request().accept(MediaType.APPLICATION_JSON).get();
+
+        System.out.println("Our inventory: filtered by price: ");
+        System.out.println();
+
+        sendGetBooksRequest(response);
+
+        ConsoleVisualizer.howToProceedInstructions();
+
     }
 }
