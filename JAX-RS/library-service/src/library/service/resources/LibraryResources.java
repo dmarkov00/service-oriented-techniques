@@ -38,11 +38,11 @@ public class LibraryResources {
         return booksResult;
     }
 
-//    @POST
-//    @Path("books")
-//    public void addBook(Book book) {
-//        books.add(book);
-//    }
+    @POST
+    @Path("books")
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
     public Book getBookById(int id) {
 
@@ -54,11 +54,11 @@ public class LibraryResources {
         return null;
     }
 
-//    @POST
-//    @Path("books/{id}}")
-//    public void updateBookById(Book books) {
-//
-//    }
+    @POST
+    @Path("books/{id}}")
+    public void updateBookById(Book books) {
+
+    }
 
     public void deleteBookById(int id) {
         books.remove(id);

@@ -70,6 +70,7 @@ public class ServiceManager {
 
         // read the result answer from the http response
         String result = response.readEntity(String.class);
+//        ConsoleVisualizer.howToProceedInstructions();
 
         if (response.getStatus() == Response.Status.OK.getStatusCode()) {
             System.out.println(result);
