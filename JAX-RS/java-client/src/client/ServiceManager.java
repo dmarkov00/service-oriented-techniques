@@ -38,8 +38,7 @@ public class ServiceManager {
 
                 break;
             case "4":
-
-
+                updateBookById();
                 break;
             case "5":
 
@@ -63,6 +62,60 @@ public class ServiceManager {
                 System.out.println();
                 System.out.println("Can not recognize command. Try again.");
         }
+    }
+
+    private void updateBookById() {
+        System.out.println("Input the id of the book you want to update:");
+        System.out.println();
+        String bookId = scan.nextLine();
+        int bookIdInt;
+        try {
+            bookIdInt = Integer.parseInt(bookId);
+
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper id value (has to be an integer).");
+            ConsoleVisualizer.howToProceedInstructions();
+            return;
+        }
+        System.out.println("Add the new values:");
+        System.out.println();
+
+        System.out.println("Input book id:");
+        System.out.println();
+        String bookupdateId = scan.nextLine();
+        System.out.println("Input book title:");
+        System.out.println();
+        String bookTitle = scan.nextLine();
+        System.out.println("Input book genre:");
+        System.out.println();
+        String bookGenre = scan.nextLine();
+
+        System.out.println("Input book price:");
+        System.out.println();
+        String bookPrice = scan.nextLine();
+        Book book;
+
+        try {
+            book = new Book(Integer.parseInt(bookId), bookTitle, bookGenre, Double.parseDouble(bookPrice));
+
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper id or price values.");
+            ConsoleVisualizer.howToProceedInstructions();
+            return;
+        }
+        Response response = serviceTarget.path(bookIdInt + "").request()
+                .accept(MediaType.TEXT_PLAIN)
+                .put(Entity.entity(book, MediaType.APPLICATION_JSON));
+
+        if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
+
+            System.out.println("Book " + book.getTitle() + " was added.");
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+
+        ConsoleVisualizer.howToProceedInstructions();
+
     }
 
     private void getBooks() {
@@ -124,7 +177,7 @@ public class ServiceManager {
             book = new Book(Integer.parseInt(bookId), bookTitle, bookGenre, Double.parseDouble(bookPrice));
 
         } catch (NumberFormatException e) {
-            System.out.println("You didn't enter a proper id of price values.");
+            System.out.println("You didn't enter a proper id or price values. ");
             ConsoleVisualizer.howToProceedInstructions();
             return;
         }
