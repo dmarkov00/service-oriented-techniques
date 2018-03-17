@@ -44,18 +44,21 @@ public class LibraryResources {
         books.add(book);
     }
 
-    public Book getBookById(int id) {
+    @GET()
+    @Path("books/{id}")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public Book getBookById(@PathParam("id") int id) {
 
         for (Book book : books) {
             if (book.getId() == id) {
                 return book;
             }
         }
-        return null;
+        throw new RuntimeException("Book with this id does not exist");
     }
 
     @POST
-    @Path("books/{id}}")
+    @Path("books/{id}")
     public void updateBookById(Book books) {
 
     }

@@ -2,7 +2,7 @@ package library.models;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement
+@XmlRootElement
 public class Book {
 
 
@@ -28,6 +28,11 @@ public class Book {
         return id;
     }
 
+    // Used to trick the service to return the id
+    public void setId(int id) {
+    }
+
+
     public String getTitle() {
         return title;
     }
@@ -50,5 +55,10 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", title='" + title + ", genre='" + genre + ", price=" + price;
     }
 }

@@ -28,10 +28,10 @@ public class ServiceManager {
 
             case "2":
 
-
                 break;
             case "3":
 
+                getBookById();
 
                 break;
             case "4":
@@ -59,6 +59,8 @@ public class ServiceManager {
 
     private List<Book> getBooks() {
 
+        System.out.println("Our inventory: ");
+        System.out.println();
 
         WebTarget operationTarget = serviceTarget;
 
@@ -78,5 +80,28 @@ public class ServiceManager {
             System.err.println(result);
         }
         return null;
+    }
+
+    private void getBookById() {
+        System.out.println("Input book id:");
+        System.out.println();
+        String bookId = scan.nextLine();
+
+        WebTarget operationTarget = serviceTarget.path(bookId);
+
+        Invocation.Builder requestBuilder = operationTarget.request().accept(MediaType.APPLICATION_XML);
+
+        Response response = requestBuilder.get();
+
+        Book result = response.readEntity(Book.class);
+
+        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+
+            System.out.println(result.toString());
+        } else {
+            System.err.println(response.readEntity(String.class));
+        }
+
+        ConsoleVisualizer.howToProceedInstructions();
     }
 }
