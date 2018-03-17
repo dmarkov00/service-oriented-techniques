@@ -40,7 +40,7 @@ public class LibraryResources {
 
     @POST
     @Path("books")
-    @Consumes(MediaType.APPLICATION_XML)
+    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public void addBook(Book book) {
         books.add(book);
     }

@@ -28,7 +28,7 @@ public class ServiceManager {
                 break;
 
             case "2":
-
+                addBook();
                 break;
             case "3":
 
