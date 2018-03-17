@@ -64,7 +64,10 @@ public class LibraryResources {
 
     }
 
-    public void deleteBookById(int id) {
+    @DELETE
+    @Path("books/{id}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public void deleteBookById(@PathParam("id") int id) {
         books.remove(id);
     }
 

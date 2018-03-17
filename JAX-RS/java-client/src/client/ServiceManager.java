@@ -130,6 +130,10 @@ public class ServiceManager {
         ConsoleVisualizer.howToProceedInstructions();
     }
 
+    private void deleteBook(){
+
+    }
+
     private void filterByGenre() {
         System.out.println("Input genre:");
         System.out.println();
