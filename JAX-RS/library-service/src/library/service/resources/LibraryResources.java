@@ -15,10 +15,10 @@ public class LibraryResources {
 
     public LibraryResources() {
         books = new ArrayList<>(Arrays.asList(
-                new Book("Ghost", "Horror", 96),
-                new Book("Pirate", "Comedy", 100),
-                new Book("The ship", "Adventure", 21.5),
-                new Book("Dogs", "Drama", 22.5)));
+                new Book(1, "Ghost", "Horror", 96),
+                new Book(2, "Pirate", "Comedy", 100),
+                new Book(3, "The ship", "Adventure", 21.5),
+                new Book(4, "Dogs", "Drama", 22.5)));
     }
 
     private List<Book> books;
@@ -42,20 +42,24 @@ public class LibraryResources {
     @Path("books")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public void addBook(Book book) {
-        this.books.add(book);
+        Book bookValidation = getBookWithId(book.getId());
+        if (bookValidation == null) {
+            this.books.add(book);
+        } else {
+            throw new RuntimeException("Book with such id already exists");
+        }
     }
 
     @GET()
     @Path("books/{id}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Book getBookById(@PathParam("id") int id) {
-
-        for (Book book : books) {
-            if (book.getId() == id) {
-                return book;
-            }
+        Book book = getBookWithId(id);
+        if (book != null) {
+            return book;
+        } else {
+            throw new RuntimeException("Book with this id does not exist");
         }
-        throw new RuntimeException("Book with this id does not exist");
     }
 
     @POST
@@ -68,7 +72,12 @@ public class LibraryResources {
     @Path("books/{id}")
     @Produces(MediaType.TEXT_PLAIN)
     public void deleteBookById(@PathParam("id") int id) {
-        books.remove(id);
+        Book book = getBookWithId(id);
+        if (book != null) {
+            books.remove(id);
+        } else {
+            throw new RuntimeException("Book with this id does not exist");
+        }
     }
 
 
@@ -92,6 +101,15 @@ public class LibraryResources {
             }
         }
         return filteredBooksByPrice;
+    }
+
+    private Book getBookWithId(int id) {
+        for (Book book : books) {
+            if (book.getId() == id) {
+                return book;
+            }
+        }
+        return null;
     }
 
 

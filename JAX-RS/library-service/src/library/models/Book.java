@@ -10,26 +10,26 @@ public class Book {
 
     }
 
-    public Book(String title, String genre, double price) {
-        idCount++;
+    public Book(int id, String title, String genre, double price) {
+        this.id = id;
         this.title = title;
         this.genre = genre;
         this.price = price;
-        this.id = idCount;
+
     }
 
+    private int id;
     private String title;
     private String genre;
     private double price;
-    private int id;
-    private static int idCount;
+
 
     public int getId() {
         return id;
     }
 
-    // Used to trick the service to return the id
     public void setId(int id) {
+        this.id = id;
     }
 
 

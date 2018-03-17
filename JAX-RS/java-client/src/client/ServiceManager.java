@@ -80,8 +80,17 @@ public class ServiceManager {
         System.out.println("Input book id:");
         System.out.println();
         String bookId = scan.nextLine();
+        int bookIdInt;
+        try {
+            bookIdInt = Integer.parseInt(bookId);
 
-        Response response = serviceTarget.path(bookId).request().accept(MediaType.APPLICATION_JSON).get();
+        } catch (NumberFormatException e) {
+            System.out.println("You didn't enter a proper id value(has to be an integer).");
+            ConsoleVisualizer.howToProceedInstructions();
+            return;
+        }
+
+        Response response = serviceTarget.path(bookIdInt + "").request().accept(MediaType.APPLICATION_JSON).get();
 
         Book result = response.readEntity(Book.class);
 
@@ -97,6 +106,9 @@ public class ServiceManager {
     }
 
     private void addBook() {
+        System.out.println("Input book id:");
+        System.out.println();
+        String bookId = scan.nextLine();
         System.out.println("Input book title:");
         System.out.println();
         String bookTitle = scan.nextLine();
@@ -109,10 +121,10 @@ public class ServiceManager {
         String bookPrice = scan.nextLine();
         Book book;
         try {
-            book = new Book(bookTitle, bookGenre, Double.parseDouble(bookPrice));
+            book = new Book(Integer.parseInt(bookId), bookTitle, bookGenre, Double.parseDouble(bookPrice));
 
         } catch (NumberFormatException e) {
-            System.out.println("You didn't enter a proper price value.");
+            System.out.println("You didn't enter a proper id of price values.");
             ConsoleVisualizer.howToProceedInstructions();
             return;
         }
@@ -130,7 +142,7 @@ public class ServiceManager {
         ConsoleVisualizer.howToProceedInstructions();
     }
 
-    private void deleteBook(){
+    private void deleteBook() {
 
     }
 
