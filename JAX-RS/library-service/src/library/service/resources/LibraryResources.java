@@ -62,10 +62,19 @@ public class LibraryResources {
         }
     }
 
-    @POST
+    @PUT
     @Path("books/{id}")
-    public void updateBookById(Book books) {
-
+    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public void updateBookById(@PathParam("id") int id, Book updatedBook) {
+        Book book = getBookWithId(id);
+        if (book != null) {
+            int bookIndex = getBookIndex(book);
+            if (bookIndex > 0) {
+                books.set(bookIndex, updatedBook);
+            } else {
+                throw new RuntimeException("Book with this id does not exist");
+            }
+        }
     }
 
     @DELETE
@@ -112,5 +121,13 @@ public class LibraryResources {
         return null;
     }
 
+    private int getBookIndex(Book book) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getId() == book.getId()) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }

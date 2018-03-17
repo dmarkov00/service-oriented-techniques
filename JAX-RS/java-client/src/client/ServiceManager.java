@@ -17,7 +17,7 @@ import library.models.Book;
 public class ServiceManager {
     private Scanner scan = new Scanner(System.in);
 
-    // Link the library service
+    // Link the service
     private WebTarget serviceTarget = ConfigureClient.configure();
 
 
