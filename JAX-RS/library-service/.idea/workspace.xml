@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Book" />
       <artifact name="library-service:war exploded" />
     </artifacts-to-build>
   </component>
@@ -17,7 +16,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="85" column="28" lean-forward="false" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
+                <element signature="e#1490#1502#0" expanded="true" />
+                <element signature="method#addBook#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#getBookById#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#getBookWithId#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#getBookIndex#0;class#LibraryResources#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,8 +79,8 @@
         <option value="$PROJECT_DIR$/out/artifacts/library_service_war_exploded/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/library/models/Book.java" />
-        <option value="$PROJECT_DIR$/src/library/service/resources/LibraryResources.java" />
         <option value="$PROJECT_DIR$/src/library/serialization/MySerializationProvider.java" />
+        <option value="$PROJECT_DIR$/src/library/service/resources/LibraryResources.java" />
       </list>
     </option>
   </component>
@@ -98,6 +119,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -114,28 +136,34 @@
             <path>
               <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
               <item name="library-service" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="library-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="library-service" type="b2602c69:ProjectViewProjectNode" />
               <item name="library-service" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/xstream-1.4.10.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32254463" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -338,15 +366,17 @@
       <workItem from="1521274255744" duration="32525000" />
       <workItem from="1521323784930" duration="6131000" />
       <workItem from="1521365215604" duration="3156000" />
-      <workItem from="1521370939713" duration="11097000" />
+      <workItem from="1521370939713" duration="11470000" />
+      <workItem from="1521387057538" duration="151000" />
+      <workItem from="1521387222422" duration="495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74114000" />
+    <option name="totallyTimeSpent" value="75133000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1920" height="1056" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -358,11 +388,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19166666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19166666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -374,6 +403,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -386,16 +416,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java</url>
-          <line>56</line>
-          <properties class="library.service.resources.LibraryResources" method="addBook">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
@@ -418,7 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -460,7 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -478,7 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -535,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -585,27 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="method#Book#0;class#Book#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#532#533#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#593#594#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#669#670#0" expanded="false" />
-            <element signature="e#701#702#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#805#806#0" expanded="false" />
-            <element signature="e#837#838#0" expanded="false" />
-            <element signature="e#865#866#0" expanded="false" />
-            <element signature="e#907#908#0" expanded="false" />
-            <element signature="e#941#942#0" expanded="false" />
-            <element signature="e#987#988#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,7 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,20 +635,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="894">
           <caret line="57" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="388">
+          <caret line="85" column="28" lean-forward="false" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
             <element signature="e#1490#1502#0" expanded="true" />
+            <element signature="method#addBook#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#getBookById#0;class#LibraryResources#0" expanded="false" />
-            <element signature="method#updateBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
@@ -734,7 +723,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>xstream-1.4.10</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

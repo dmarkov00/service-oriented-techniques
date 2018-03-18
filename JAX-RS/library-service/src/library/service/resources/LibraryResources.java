@@ -83,7 +83,7 @@ public class LibraryResources {
         Book book = getBookWithId(id);
         if (book != null) {
             int bookIndex = getBookIndex(book);
-            if (bookIndex > 0) {
+            if (bookIndex >= 0) {
                 books.set(bookIndex, updatedBook);
                 return Response.noContent().build();
             } else {
