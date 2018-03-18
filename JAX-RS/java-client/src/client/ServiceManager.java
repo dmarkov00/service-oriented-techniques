@@ -290,7 +290,7 @@ public class ServiceManager {
 
         Response response = serviceTarget.queryParam("genre", genre).queryParam("price", price).request().accept(MediaType.APPLICATION_XML).get();
 
-        System.out.println("Our inventory: filtered by price: ");
+        System.out.println("Our inventory: filtered by genre and price: ");
         System.out.println();
 
         parseGetBooksResponse(response);
