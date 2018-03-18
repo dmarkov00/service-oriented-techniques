@@ -236,10 +236,11 @@ public class ServiceManager {
         }
 
         Response response = serviceTarget.path(bookIdInt + "").request().accept(MediaType.TEXT_PLAIN).delete();
-        if (response.getStatus() != Response.Status.OK.getStatusCode()) {
+        if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
+            System.out.println("Book deleted!");
+        } else {
             System.err.println(response.readEntity(String.class));
         }
-        System.out.println("Book deleted!");
         ConsoleVisualizer.howToProceedInstructions();
 
     }

@@ -20,28 +20,20 @@
       <file leaf-file-name="LibraryResources.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+            <state relative-caret-position="-330">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
                 <element signature="e#1490#1502#0" expanded="true" />
-                <element signature="method#addBook#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#getBookById#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#updateBookById#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
+                <element signature="method#getBookWithId#0;class#LibraryResources#0" expanded="false" />
                 <element signature="method#getBookIndex#0;class#LibraryResources#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceMethodInvocationHandlerFactory.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jersey-server.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -59,6 +51,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tur</find>
+      <find>@POST</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -99,7 +92,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1612" />
@@ -169,7 +162,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-client" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -368,15 +361,16 @@
       <workItem from="1521274255744" duration="32525000" />
       <workItem from="1521323784930" duration="6131000" />
       <workItem from="1521365215604" duration="3156000" />
-      <workItem from="1521370939713" duration="6349000" />
+      <workItem from="1521370939713" duration="8701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69366000" />
+    <option name="totallyTimeSpent" value="71718000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1920" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1920" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -419,14 +413,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java</url>
-          <line>38</line>
-          <properties class="library.service.resources.LibraryResources" method="getAllBooks">
+          <line>56</line>
+          <properties class="library.service.resources.LibraryResources" method="addBook">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -437,12 +431,14 @@
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
             <element signature="e#1490#1502#0" expanded="true" />
-            <element signature="method#addBook#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#getBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#updateBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#getBookWithId#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#getBookIndex#0;class#LibraryResources#0" expanded="false" />
           </folding>
         </state>
@@ -690,16 +686,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/library/service/resources/LibraryResources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        <state relative-caret-position="-330">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getAllBooks#0;class#LibraryResources#0" expanded="false" />
             <element signature="e#1490#1502#0" expanded="true" />
-            <element signature="method#addBook#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#getBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#updateBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#deleteBookById#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByGenre#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#filterBooksByPrice#0;class#LibraryResources#0" expanded="false" />
+            <element signature="method#getBookWithId#0;class#LibraryResources#0" expanded="false" />
             <element signature="method#getBookIndex#0;class#LibraryResources#0" expanded="false" />
           </folding>
         </state>
