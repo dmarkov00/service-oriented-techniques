@@ -1,16 +1,13 @@
 package client;
 
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Form;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import library.models.Book;
@@ -27,22 +24,17 @@ public class ServiceManager {
         switch (input) {
             case "1":
                 getBooks();
-
                 break;
-
             case "2":
                 addBook();
                 break;
             case "3":
-
                 getBookById();
-
                 break;
             case "4":
                 updateBookById();
                 break;
             case "5":
-
                 deleteBook();
                 break;
             case "6":
@@ -58,8 +50,7 @@ public class ServiceManager {
                 addPersonToBannedFromLibraryList();
                 break;
             case "":
-                testForm();
-//                ConsoleVisualizer.printInstructions();
+                ConsoleVisualizer.printInstructions();
 
                 break;
 
@@ -92,11 +83,6 @@ public class ServiceManager {
         }
 
         ConsoleVisualizer.howToProceedInstructions();
-
-
-    }
-
-    private void testForm() {
 
 
     }
@@ -146,7 +132,7 @@ public class ServiceManager {
 
         if (response.getStatus() == Response.Status.NO_CONTENT.getStatusCode()) {
 
-            System.out.println("Book " + book.getTitle() + " was added.");
+            System.out.println("Book " + book.getTitle() + " was updated.");
         } else {
             System.err.println(response.readEntity(String.class));
         }
@@ -160,7 +146,7 @@ public class ServiceManager {
         System.out.println("Our inventory: ");
         System.out.println();
 
-        Response response = serviceTarget.request().accept(MediaType.APPLICATION_JSON).get();
+        Response response = serviceTarget.request().accept(MediaType.APPLICATION_XML).get();
 
         parseGetBooksResponse(response);
         ConsoleVisualizer.howToProceedInstructions();
@@ -189,6 +175,7 @@ public class ServiceManager {
             System.out.println();
             System.out.println(result.toString());
         } else {
+            System.out.println(response.getStatus());
             System.err.println(response.readEntity(String.class));
         }
 
@@ -272,7 +259,6 @@ public class ServiceManager {
 
     }
 
-
     private void filterByPrice() {
         System.out.println("Input price:");
         System.out.println();
@@ -299,7 +285,7 @@ public class ServiceManager {
         String price = scan.nextLine();
 
 
-        Response response = serviceTarget.queryParam("genre", genre).queryParam("price", price).request().accept(MediaType.APPLICATION_JSON).get();
+        Response response = serviceTarget.queryParam("genre", genre).queryParam("price", price).request().accept(MediaType.APPLICATION_XML).get();
 
         System.out.println("Our inventory: filtered by price: ");
         System.out.println();

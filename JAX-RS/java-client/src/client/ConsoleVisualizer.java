@@ -16,6 +16,7 @@ public class ConsoleVisualizer {
         System.out.println("-Filter books by price.");
         System.out.println("-Filter books by genre.");
         System.out.println("-Filter books by price and genre.");
+        System.out.println("-Ban people from the library.");
 
 
         System.out.println("----------------------------------------------------");
@@ -51,7 +52,8 @@ public class ConsoleVisualizer {
 
 
     }
-    public static void howToProceedInstructions(){
+
+    public static void howToProceedInstructions() {
         System.out.println();
         System.out.println("Press enter to read instructions again or proceed with new input...");
     }

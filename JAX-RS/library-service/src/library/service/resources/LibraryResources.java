@@ -4,7 +4,9 @@ import library.models.Book;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +36,7 @@ public class LibraryResources {
     @GET()
     @Path("books")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<Book> getAllBooks(@QueryParam("genre") String genre, @QueryParam("price") double price) {
+    public Response getAllBooks(@QueryParam("genre") String genre, @QueryParam("price") double price) {
         List<Book> booksResult = this.books;
         if (genre != null) {
             booksResult = filterBooksByGenre(genre, booksResult);
@@ -42,58 +44,67 @@ public class LibraryResources {
         if (price != 0.0d) {
             booksResult = filterBooksByPrice(price, booksResult);
         }
-        return booksResult;
+
+        GenericEntity<List<Book>> entity = new GenericEntity<List<Book>>(booksResult) {
+        };
+
+        return Response.ok(entity).build();
     }
 
     @POST
     @Path("books")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void addBook(Book book) {
+    public Response addBook(Book book) {
         Book bookValidation = getBookWithId(book.getId());
         if (bookValidation == null) {
             this.books.add(book);
+            return Response.noContent().build();
         } else {
-            throw new RuntimeException("Book with such id already exists");
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Book with such id already exists").build();
         }
     }
 
     @GET()
     @Path("books/{id}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Book getBookById(@PathParam("id") int id) {
+    public Response getBookById(@PathParam("id") int id) {
         Book book = getBookWithId(id);
         if (book != null) {
-            return book;
+            return Response.ok(book).build();
         } else {
-            throw new RuntimeException("Book with this id does not exist");
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Book with such id does not exist").build();
         }
     }
 
     @PUT
     @Path("books/{id}")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void updateBookById(@PathParam("id") int id, Book updatedBook) {
+    public Response updateBookById(@PathParam("id") int id, Book updatedBook) {
         Book book = getBookWithId(id);
         if (book != null) {
             int bookIndex = getBookIndex(book);
             if (bookIndex > 0) {
                 books.set(bookIndex, updatedBook);
+                return Response.noContent().build();
             } else {
-                throw new RuntimeException("Book with this id does not exist");
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Service failure while getting book index!").build();
             }
+        } else {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Book with such id does not exist").build();
         }
     }
 
     @DELETE
     @Path("books/{id}")
     @Produces(MediaType.TEXT_PLAIN)
-    public void deleteBookById(@PathParam("id") int id) {
+    public Response deleteBookById(@PathParam("id") int id) {
         Book book = getBookWithId(id);
         if (book != null) {
             books.remove(book);
         } else {
-            throw new RuntimeException("Book with this id does not exist");
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Book with such id does not exist").build();
         }
+        return Response.noContent().build();
     }
 
 
