@@ -177,7 +177,6 @@ public class ServiceManager {
             System.out.println();
             System.out.println(result.toString());
         } else {
-//            System.out.println(response.getStatus());
             System.err.println(response.readEntity(String.class));
         }
 
