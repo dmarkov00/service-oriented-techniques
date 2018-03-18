@@ -13,7 +13,7 @@ public class ConfigureClient {
     public static WebTarget configure() {
         ClientConfig config = new ClientConfig();
         Client client = ClientBuilder.newClient(config);
-        URI baseURI = UriBuilder.fromUri("http://localhost:9000/rest/library/books").build();
+        URI baseURI = UriBuilder.fromUri("http://localhost:8080/rest/library/books").build();
         
         return client.target(baseURI);
     }
