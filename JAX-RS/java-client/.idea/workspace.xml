@@ -25,7 +25,7 @@
       <file leaf-file-name="ConfigureClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ConfigureClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="306">
               <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,13 +37,13 @@
       <file leaf-file-name="ServiceManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/ServiceManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="178" column="66" lean-forward="true" selection-start-line="178" selection-start-column="66" selection-end-line="178" selection-end-column="66" />
+            <state relative-caret-position="399">
+              <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#manageInput#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#addPersonToBannedFromLibraryList#0;class#ServiceManager#0" expanded="false" />
-                <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
+                <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#deleteBook#0;class#ServiceManager#0" expanded="false" />
                 <element signature="method#filterByGenre#0;class#ServiceManager#0" expanded="false" />
@@ -297,16 +297,15 @@
       <workItem from="1521274257930" duration="34865000" />
       <workItem from="1521323785974" duration="7935000" />
       <workItem from="1521365217902" duration="4217000" />
-      <workItem from="1521370940906" duration="3549000" />
+      <workItem from="1521370940906" duration="5059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53793000" />
+    <option name="totallyTimeSpent" value="55303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -316,7 +315,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -347,12 +346,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/client/ServiceManager.java</url>
-          <line>185</line>
+          <line>187</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/client/ServiceManager.java</url>
+          <line>154</line>
+          <properties class="client.ServiceManager" method="getBookById">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -391,7 +398,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#manageInput#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addPersonToBannedFromLibraryList#0;class#ServiceManager#0" expanded="false" />
-            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
+            <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#deleteBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#filterByGenre#0;class#ServiceManager#0" expanded="false" />
@@ -425,7 +432,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#manageInput#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addPersonToBannedFromLibraryList#0;class#ServiceManager#0" expanded="false" />
-            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
+            <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#deleteBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#filterByGenre#0;class#ServiceManager#0" expanded="false" />
@@ -475,7 +482,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#manageInput#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addPersonToBannedFromLibraryList#0;class#ServiceManager#0" expanded="false" />
-            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
+            <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#deleteBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#filterByGenre#0;class#ServiceManager#0" expanded="false" />
@@ -486,32 +493,10 @@
     <entry file="jar://$PROJECT_DIR$/lib/Book.jar!/Book.class" />
     <entry file="jar://$PROJECT_DIR$/lib/Book.jar!/models/Book.class" />
     <entry file="jar://$PROJECT_DIR$/lib/Book.jar!/library/Book.class" />
-    <entry file="jar://$PROJECT_DIR$/lib/jersey-client.jar!/org/glassfish/jersey/client/JerseyWebTarget.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="122" lean-forward="false" selection-start-line="28" selection-start-column="122" selection-end-line="28" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jersey-client.jar!/org/glassfish/jersey/client/InboundJaxrsResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/Book.jar!/library/models/Book.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-138">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -523,9 +508,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jersey-client.jar!/org/glassfish/jersey/client/JerseyWebTarget.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jersey-client.jar!/org/glassfish/jersey/client/JerseyInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jersey-client.jar!/org/glassfish/jersey/client/InboundJaxrsResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#1748#1902#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ConfigureClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="306">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -535,13 +558,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ServiceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="178" column="66" lean-forward="true" selection-start-line="178" selection-start-column="66" selection-end-line="178" selection-end-column="66" />
+        <state relative-caret-position="399">
+          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#manageInput#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addPersonToBannedFromLibraryList#0;class#ServiceManager#0" expanded="false" />
-            <element signature="method#updateBookById#0;class#ServiceManager#0" expanded="false" />
+            <element signature="method#getBooks#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#addBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#deleteBook#0;class#ServiceManager#0" expanded="false" />
             <element signature="method#filterByGenre#0;class#ServiceManager#0" expanded="false" />

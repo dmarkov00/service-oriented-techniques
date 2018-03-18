@@ -166,16 +166,18 @@ public class ServiceManager {
             return;
         }
 
-        Response response = serviceTarget.path(bookIdInt + "").request().accept(MediaType.APPLICATION_JSON).get();
+        Response response = serviceTarget.path(bookIdInt + "").request().accept(MediaType.APPLICATION_JSON)
+                .get();
 
-        Book result = response.readEntity(Book.class);
 
         if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+            Book result = response.readEntity(Book.class);
+
             System.out.println("Resulted book:");
             System.out.println();
             System.out.println(result.toString());
         } else {
-            System.out.println(response.getStatus());
+//            System.out.println(response.getStatus());
             System.err.println(response.readEntity(String.class));
         }
 
