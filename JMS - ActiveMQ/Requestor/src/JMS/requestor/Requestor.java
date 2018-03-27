@@ -15,13 +15,8 @@ public class Requestor {
     public void sendRequest(String messageBody) {
         try {
             Properties props = new Properties();
-            props.setProperty(Context.INITIAL_CONTEXT_FACTORY,
-                    "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
+            props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
-
-
-            // connect to the Destination called “myFirstChannel”
-            // queue or topic: “queue.myFirstDestination” or “topic.myFirstDestination”
 
             props.put(("queue.libraryRequestQueue"), "libraryRequestQueue");
             Context jndiContext = new InitialContext(props);
@@ -35,7 +30,6 @@ public class Requestor {
             producer = session.createProducer(sendDestination);
 
 //        String body = messageBody; //or serialize an object!
-
             // Create a text message
             Message msg = session.createTextMessage(messageBody);
 
