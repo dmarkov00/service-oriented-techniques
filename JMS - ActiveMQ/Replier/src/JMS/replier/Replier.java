@@ -10,7 +10,7 @@ import java.util.*;
 public class Replier {
 
 
-    public void sendReply(String replyMessage, int questionId) {
+    public void sendReply(String replyMessage, String requestorMessageId) {
         Connection connection; // to connect to the ActiveMQ
         Session session; // session for creating messages, producers and
         Destination sendDestination; // reference to a queue/topic destination

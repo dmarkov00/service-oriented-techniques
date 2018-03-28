@@ -20,9 +20,6 @@ public class Controller {
         messagesListView.getItems().add(messageBody);
 
 
-//  this one for later       Object selected = messagesListView.getSelectionModel().getSelectedItem();
     }
 
 }
-
-// Initializable

@@ -21,12 +21,28 @@ public class Controller {
     public TextField messageField;
     private Replier replier = new Replier();
 
-    private Map<String, QuestionAndAnswerData> messageData = new HashMap<>();
+    private Map<String, QuestionAndAnswerData> messageData = new LinkedHashMap<>();
 
     public void buttonSendClicker() {
         String messageBody = messageField.getText();
-        replier.sendReply(messageBody, 5);
+        int selected = messagesListView.getSelectionModel().getSelectedIndex();
+        String requestorMessageId = this.getLinkedHashMapKeyByIndex(selected);
+        System.out.println(requestorMessageId);
+        replier.sendReply(messageBody, requestorMessageId);
 
+
+    }
+
+    private String getLinkedHashMapKeyByIndex(int listIndex) {
+        int index = 0;
+        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
+//            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+            if (index == listIndex) {
+                return entry.getKey();
+            }
+            index++;
+        }
+        return null;
     }
 
 
@@ -61,7 +77,9 @@ public class Controller {
                     String messageId = null;
                     String requestorQuestion = null;
                     try {
+                        // Retrieve message id
                         messageId = msg.getJMSMessageID();
+                        // Get the actual message
                         requestorQuestion = ((ActiveMQTextMessage) msg).getText();
 
                     } catch (JMSException e) {
@@ -69,10 +87,11 @@ public class Controller {
                     }
 
                     QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
-
+                    System.out.println(msg);
+                    // Fill the map for later reference
                     messageData.put(messageId, qAndAData);
 
-
+                    // Add the question to the list view
                     messagesListView.getItems().add(qAndAData.toString());
 
                 }
