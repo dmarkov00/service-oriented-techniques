@@ -1,7 +1,7 @@
-package GUI;
+package JMS.requestor;
 
-public class QuestionAnswerData {
-    public QuestionAnswerData(String question) {
+public class QuestionAndAnswerData {
+    public QuestionAndAnswerData(String question) {
         this.question = question;
     }
 

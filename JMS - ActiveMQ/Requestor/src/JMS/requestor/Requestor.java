@@ -39,6 +39,10 @@ public class Requestor {
 
             // Send the message
             producer.send(msg);
+            // After message is sent
+
+
+
         } catch (NamingException | JMSException e) {
             e.printStackTrace();
         }
