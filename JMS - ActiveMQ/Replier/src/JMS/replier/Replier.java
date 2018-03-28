@@ -13,7 +13,7 @@ public class Replier {
     private Destination receiveDestination;    //        reference to a queue/topic destination
     private MessageConsumer consumer; // for receiving messages
 
-    public void sendReply(String replyMessage) {
+    public void sendReply(String replyMessage, int questionId) {
         try {
             Properties props = new Properties();
             props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");

@@ -12,7 +12,7 @@ public class Controller {
 
     public void buttonSendClicker() {
         String messageBody = messageField.getText();
-        replier.sendReply(messageBody);
+        replier.sendReply(messageBody,5);
 
     }
 }
