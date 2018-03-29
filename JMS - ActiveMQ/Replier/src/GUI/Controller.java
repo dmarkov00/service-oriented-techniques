@@ -20,9 +20,8 @@ public class Controller {
     @FXML
     public TextField messageField;
     private Replier replier = new Replier();
-    private Destination replyAddress;
 
-    private Map<String, QuestionAndAnswerData> messageData = new LinkedHashMap<>();
+    private Map<Message, QuestionAndAnswerData> messageData = new LinkedHashMap<>();
 
     public void buttonSendClicker() {
         String messageBody = messageField.getText();
@@ -30,28 +29,24 @@ public class Controller {
         // Retrieve the index of the selected item from the list view
         int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
         // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
-        Map.Entry<String, QuestionAndAnswerData> mapByIndex = this.getFromLinkedHashMapByIndex(selectedItemIndex);
-
-        // Get the id, for setting as a correlation id, later on
-        String requestorMessageId = mapByIndex.getKey();
+        Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
         // Send reply
-        replier.sendReply(messageBody, requestorMessageId, replyAddress);
+        replier.sendReply(messageBody, mapByIndex.getKey());
 
         // Updating the map value with the answer string
         QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
         updatedQuestionAndAnswerData.setAnswer(messageBody);
-        messageData.replace(requestorMessageId, updatedQuestionAndAnswerData);
+        messageData.replace(mapByIndex.getKey(), updatedQuestionAndAnswerData);
 
         populateListView();
-
         messageField.setText("");
 
     }
 
-    private Map.Entry<String, QuestionAndAnswerData> getFromLinkedHashMapByIndex(int listIndex) {
+    private Map.Entry<Message, QuestionAndAnswerData> getPairFromLinkedHashMapByIndex(int listIndex) {
         int index = 0;
-        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
+        for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
 //            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
             if (index == listIndex) {
                 return entry;
@@ -70,7 +65,7 @@ public class Controller {
 
     private void populateListView() {
         messagesListView.getItems().clear();
-        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
+        for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
             messagesListView.getItems().add(entry.getValue().toString());
         }
     }
@@ -97,11 +92,10 @@ public class Controller {
             consumer.setMessageListener(new MessageListener() {
                 @Override
                 public void onMessage(Message msg) {
-                    String messageId = null;
+
                     String requestorQuestion = null;
                     try {
-                        // Retrieve message id
-                        messageId = msg.getJMSMessageID();
+
                         // Get the actual message
                         requestorQuestion = ((ActiveMQTextMessage) msg).getText();
 
@@ -111,20 +105,10 @@ public class Controller {
 
                     QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
 
-                    try {
-                        replyAddress = msg.getJMSReplyTo();
-                    } catch (JMSException e) {
-                        e.printStackTrace();
-                    }
-
                     // Fill the map for later reference
-                    messageData.put(messageId, qAndAData);
-
-                    // Add the question to the list view
-//                    messagesListView.getItems().add(qAndAData.toString());
+                    messageData.put(msg, qAndAData);
 
                     populateListView();
-
 
                 }
             });

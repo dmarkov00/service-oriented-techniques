@@ -10,15 +10,18 @@ import java.util.*;
 public class Replier {
 
 
-    public void sendReply(String replyMessage, String requestorMessageId, Destination returnAddress) {
+    public void sendReply(String replyMessage, Message requestorMessage) {
 
-        String addressString = returnAddress.toString().substring(returnAddress.toString().lastIndexOf("/") + 1);
 
         Connection connection; // to connect to the ActiveMQ
         Session session; // session for creating messages, producers and
         Destination sendDestination; // reference to a queue/topic destination
         MessageProducer producer; // for sending messages
         try {
+            // Extract the address string, from the map key, then trim it
+            String addressString = requestorMessage.getJMSReplyTo().toString().substring(requestorMessage.getJMSReplyTo().toString().lastIndexOf("/") + 1);
+
+
             Properties props = new Properties();
             props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
@@ -31,15 +34,15 @@ public class Replier {
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
             // Connect to the sender destination
-            sendDestination = returnAddress;
+            sendDestination = requestorMessage.getJMSReplyTo();
             producer = session.createProducer(sendDestination);
 
 //        String body = messageBody; //or serialize an object!
             // Create a text message
             Message msg = session.createTextMessage(replyMessage);
-            msg.setJMSCorrelationID(requestorMessageId);
+            msg.setJMSCorrelationID(requestorMessage.getJMSMessageID());
             // Send the message
-            producer.send(returnAddress, msg);
+            producer.send(requestorMessage.getJMSReplyTo(), msg);
         } catch (NamingException | JMSException e) {
             e.printStackTrace();
         }
