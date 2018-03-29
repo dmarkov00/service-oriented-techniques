@@ -36,6 +36,8 @@ public class Controller {
 
         // Update the list view
         this.populateListView();
+
+        messageField.setText("");
     }
 
     @FXML
@@ -75,13 +77,13 @@ public class Controller {
                         correlationId = msg.getJMSCorrelationID();
                         // Find the question that needs to be answered
                         QuestionAndAnswerData questionAndAnswerData = findQuestionByCorrelationID(correlationId);
-//                        // Get the actual message
+                        // Get the actual message
                         replierAnswer = ((ActiveMQTextMessage) msg).getText();
-//                        // Set answer in the Q&AData object
+                        // Set answer in the Q&AData object
                         questionAndAnswerData.setAnswer(replierAnswer);
-//                        //Update the hash map with the new answer value
+                        //Update the hash map with the new answer value
                         requestor.messageData.replace(correlationId, questionAndAnswerData);
-//
+
                         populateListView();
 
                     } catch (JMSException e) {
@@ -111,17 +113,5 @@ public class Controller {
         return null;
     }
 
-
-    private String getLinkedHashMapKeyByIndex(int listIndex) {
-        int index = 0;
-        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
-//            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-            if (index == listIndex) {
-                return entry.getKey();
-            }
-            index++;
-        }
-        return null;
-    }
 
 }

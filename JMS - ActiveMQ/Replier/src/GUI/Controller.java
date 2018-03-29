@@ -25,20 +25,35 @@ public class Controller {
 
     public void buttonSendClicker() {
         String messageBody = messageField.getText();
-        int selected = messagesListView.getSelectionModel().getSelectedIndex();
-        String requestorMessageId = this.getLinkedHashMapKeyByIndex(selected);
-//        System.out.println(requestorMessageId);
+
+        // Retrieve the index of the selected item from the list view
+        int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
+        // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
+        Map.Entry<String, QuestionAndAnswerData> mapByIndex = this.getFromLinkedHashMapByIndex(selectedItemIndex);
+
+        // Get the id, for setting as a correlation id, later on
+        String requestorMessageId = mapByIndex.getKey();
+
+        // Send reply
         replier.sendReply(messageBody, requestorMessageId);
 
+        // Updating the map value with the answer string
+        QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
+        updatedQuestionAndAnswerData.setAnswer(messageBody);
+        messageData.replace(requestorMessageId, updatedQuestionAndAnswerData);
+
+        populateListView();
+
+        messageField.setText("");
 
     }
 
-    private String getLinkedHashMapKeyByIndex(int listIndex) {
+    private Map.Entry<String, QuestionAndAnswerData> getFromLinkedHashMapByIndex(int listIndex) {
         int index = 0;
         for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
 //            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
             if (index == listIndex) {
-                return entry.getKey();
+                return entry;
             }
             index++;
         }
@@ -50,6 +65,13 @@ public class Controller {
     public void initialize() {
         this.listenForQuestions();
 
+    }
+
+    private void populateListView() {
+        messagesListView.getItems().clear();
+        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
+            messagesListView.getItems().add(entry.getValue().toString());
+        }
     }
 
     private void listenForQuestions() {
