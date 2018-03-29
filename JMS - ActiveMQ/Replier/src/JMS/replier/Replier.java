@@ -34,7 +34,7 @@ public class Replier {
 //        String body = messageBody; //or serialize an object!
             // Create a text message
             Message msg = session.createTextMessage(replyMessage);
-
+            msg.setJMSCorrelationID(requestorMessageId);
             // Send the message
             producer.send(msg);
         } catch (NamingException | JMSException e) {

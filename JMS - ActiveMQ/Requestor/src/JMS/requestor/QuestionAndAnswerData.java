@@ -28,7 +28,7 @@ public class QuestionAndAnswerData {
 
     public String toString() {
         if (answer == null) {
-            return question + " ---> " + "waiting for a reply";
+            return question + " ---> " + "waiting for a reply..";
         } else {
             return question + " ---> " + answer;
         }

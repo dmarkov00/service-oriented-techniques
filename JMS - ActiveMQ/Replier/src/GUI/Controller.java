@@ -27,7 +27,7 @@ public class Controller {
         String messageBody = messageField.getText();
         int selected = messagesListView.getSelectionModel().getSelectedIndex();
         String requestorMessageId = this.getLinkedHashMapKeyByIndex(selected);
-        System.out.println(requestorMessageId);
+//        System.out.println(requestorMessageId);
         replier.sendReply(messageBody, requestorMessageId);
 
 
