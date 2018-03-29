@@ -35,12 +35,10 @@ public class Requestor {
             sendDestination = (Destination) jndiContext.lookup("libraryRequestQueue");
             producer = session.createProducer(sendDestination);
 
-//        String body = messageBody; //or serialize an object!
-
             // Create a text message
             Message msg = session.createTextMessage(messageBody);
 
-            // Creating reply destination
+            // Creating reply destination////////////////////////////////////////////
             String messageId = null;
             String requestorQuestion = null;
 
@@ -53,21 +51,18 @@ public class Requestor {
             Context jndiContext1 = new InitialContext(props1);
 
             receiverDestination = (Destination) jndiContext1.lookup(ReplyQueue.replyQueueName);
+            //////////////////////////////
 
-
+            // Set reply address to message
             msg.setJMSReplyTo(receiverDestination);
+
             // Send the message
             producer.send(msg);
 
-            try {
-                // Retrieve message id
-                messageId = msg.getJMSMessageID();
-                // Get the actual message
-                requestorQuestion = ((ActiveMQTextMessage) msg).getText();
-
-            } catch (JMSException e) {
-                e.printStackTrace();
-            }
+            // Retrieve message id
+            messageId = msg.getJMSMessageID();
+            // Get the actual message text
+            requestorQuestion = ((ActiveMQTextMessage) msg).getText();
 
             QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
 
@@ -80,6 +75,5 @@ public class Requestor {
         }
 
     }
-
 
 }

@@ -94,7 +94,7 @@ public class Controller {
                             replierAnswer = libraryInfo.toString();
 
                         } catch (Exception e) {
-                            System.out.println(e);
+//                            System.out.println(e);
                         }
 
 
