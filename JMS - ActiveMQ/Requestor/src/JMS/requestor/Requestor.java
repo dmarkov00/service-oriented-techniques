@@ -40,29 +40,21 @@ public class Requestor {
             // Create a text message
             Message msg = session.createTextMessage(messageBody);
 
+            // Creating reply destination
             String messageId = null;
             String requestorQuestion = null;
 
-            ////////////////////////
-            Connection connection1; // to connect to the ActiveMQ
-            Session session1; // session for creating messages, producers and
             Destination receiverDestination; // reference to a queue/topic destination
-//            MessageProducer producer1; // for sending messages
             Properties props1 = new Properties();
             props1.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props1.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
 
             props1.put(("queue." + ReplyQueue.replyQueueName), ReplyQueue.replyQueueName);
             Context jndiContext1 = new InitialContext(props1);
-//            ConnectionFactory connectionFactory1 = (ConnectionFactory) jndiContext1
-//                    .lookup("ConnectionFactory");
-//            connection1 = connectionFactory.createConnection();
-//            session1 = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
 
             receiverDestination = (Destination) jndiContext1.lookup(ReplyQueue.replyQueueName);
 
-            //////////////////////
+
             msg.setJMSReplyTo(receiverDestination);
             // Send the message
             producer.send(msg);

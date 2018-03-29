@@ -4,6 +4,7 @@ package GUI;
 import JMS.replier.QuestionAndAnswerData;
 import JMS.replier.Replier;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import org.apache.activemq.command.ActiveMQTextMessage;
@@ -57,17 +58,18 @@ public class Controller {
     }
 
 
-    @FXML
     public void initialize() {
         this.listenForQuestions();
-
     }
 
+
     private void populateListView() {
-        messagesListView.getItems().clear();
-        for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
-            messagesListView.getItems().add(entry.getValue().toString());
-        }
+
+            messagesListView.getItems().clear();
+            for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
+                messagesListView.getItems().add(entry.getValue().toString());
+            }
+
     }
 
     private void listenForQuestions() {
@@ -105,7 +107,7 @@ public class Controller {
 
                     QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
 
-                    // Fill the map for later reference
+                    // Fill the map with the new data
                     messageData.put(msg, qAndAData);
 
                     populateListView();
@@ -117,4 +119,5 @@ public class Controller {
             e.printStackTrace();
         }
     }
+
 }
