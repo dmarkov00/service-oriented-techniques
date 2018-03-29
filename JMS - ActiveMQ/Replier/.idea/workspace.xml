@@ -76,11 +76,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionAndAnswerData.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Replier.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JMS/replier/Replier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionAndAnswerData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMS/replier/QuestionAndAnswerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -114,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/GUI/QuestionAnswerData.java" />
         <option value="$PROJECT_DIR$/src/JMS/replier/QuestionAnswerData.java" />
         <option value="$PROJECT_DIR$/src/JMS/replier/QuestionAndAnswerData.java" />
-        <option value="$PROJECT_DIR$/src/JMS/replier/Replier.java" />
         <option value="$PROJECT_DIR$/src/GUI/Controller.java" />
+        <option value="$PROJECT_DIR$/src/JMS/replier/Replier.java" />
       </list>
     </option>
   </component>
@@ -351,12 +363,12 @@
       <workItem from="1522246165395" duration="20215000" />
       <workItem from="1522303689146" duration="10972000" />
       <workItem from="1522323315061" duration="5272000" />
-      <workItem from="1522330033656" duration="534000" />
+      <workItem from="1522330033656" duration="2000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44064000" />
+    <option name="totallyTimeSpent" value="45530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -616,6 +628,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1983">
           <caret line="1770" column="0" lean-forward="false" selection-start-line="1770" selection-start-column="0" selection-end-line="1770" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -623,16 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMS/replier/Replier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -681,7 +684,7 @@
         <state relative-caret-position="187">
           <caret line="402" column="0" lean-forward="false" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
           <folding>
-            <element signature="e#17822#17823#0" expanded="true" />
+            <element signature="e#17822#17823#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,7 +694,7 @@
         <state relative-caret-position="196">
           <caret line="533" column="0" lean-forward="false" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
           <folding>
-            <element signature="e#19641#19642#0" expanded="true" />
+            <element signature="e#19641#19642#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,20 +750,30 @@
         <state relative-caret-position="196">
           <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding>
-            <element signature="e#5179#5180#0" expanded="true" />
-            <element signature="e#5233#5234#0" expanded="true" />
-            <element signature="e#7869#7870#0" expanded="true" />
-            <element signature="e#9386#9387#0" expanded="true" />
-            <element signature="e#9456#9457#0" expanded="true" />
+            <element signature="e#5179#5180#0" expanded="false" />
+            <element signature="e#5233#5234#0" expanded="false" />
+            <element signature="e#7869#7870#0" expanded="false" />
+            <element signature="e#9386#9387#0" expanded="false" />
+            <element signature="e#9456#9457#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JMS/replier/QuestionAndAnswerData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JMS/replier/Replier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

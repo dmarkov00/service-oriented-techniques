@@ -11,6 +11,9 @@ public class Replier {
 
 
     public void sendReply(String replyMessage, String requestorMessageId, Destination returnAddress) {
+
+        String addressString = returnAddress.toString().substring(returnAddress.toString().lastIndexOf("/") + 1);
+
         Connection connection; // to connect to the ActiveMQ
         Session session; // session for creating messages, producers and
         Destination sendDestination; // reference to a queue/topic destination
@@ -20,7 +23,7 @@ public class Replier {
             props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
 
-            props.put(("queue.libraryReplyQueue"), "libraryReplyQueue");
+            props.put(("queue." + addressString), addressString);
             Context jndiContext = new InitialContext(props);
             ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext
                     .lookup("ConnectionFactory");
@@ -28,7 +31,7 @@ public class Replier {
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
             // Connect to the sender destination
-            sendDestination = (Destination) jndiContext.lookup("libraryReplyQueue");
+            sendDestination = returnAddress;
             producer = session.createProducer(sendDestination);
 
 //        String body = messageBody; //or serialize an object!
