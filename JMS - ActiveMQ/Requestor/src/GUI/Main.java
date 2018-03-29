@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
-        primaryStage.setTitle("JMS Requestor");
+        primaryStage.setTitle("JMS Requestor - library");
         primaryStage.setScene(new Scene(root, 600, 350));
         primaryStage.show();
 

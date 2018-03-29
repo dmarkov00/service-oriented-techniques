@@ -1,5 +1,6 @@
 package GUI;
 
+import JMS.requestor.LibraryInfo;
 import JMS.requestor.QuestionAndAnswerData;
 import JMS.requestor.ReplyQueue;
 import JMS.requestor.Requestor;
@@ -14,6 +15,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Map;
 import java.util.Properties;
+
+import com.google.gson.Gson;
 
 
 public class Controller {
@@ -81,6 +84,20 @@ public class Controller {
                         QuestionAndAnswerData questionAndAnswerData = findQuestionByCorrelationID(correlationId);
                         // Get the actual message
                         replierAnswer = ((ActiveMQTextMessage) msg).getText();
+
+                        // Try to deserialize if library info was sent back
+                        Gson gson = new Gson();
+
+                        // If the object cannot be parsed exception is thrown, that means we are not getting library info
+                        try {
+                            LibraryInfo libraryInfo = gson.fromJson(replierAnswer, LibraryInfo.class);
+                            replierAnswer = libraryInfo.toString();
+
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+
+
                         // Set answer in the Q&AData object
                         questionAndAnswerData.setAnswer(replierAnswer);
                         //Update the hash map with the new answer value
