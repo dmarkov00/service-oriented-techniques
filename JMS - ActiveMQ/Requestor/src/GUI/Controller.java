@@ -68,7 +68,6 @@ public class Controller {
                 @Override
                 public void onMessage(Message msg) {
 
-                    messageData = requestor.messageData;
                     String replierAnswer = null;
                     String correlationId = null;
                     try {
@@ -81,7 +80,7 @@ public class Controller {
 //                        // Set answer in the Q&AData object
                         questionAndAnswerData.setAnswer(replierAnswer);
 //                        //Update the hash map with the new answer value
-                        messageData.replace(correlationId, questionAndAnswerData);
+                        requestor.messageData.replace(correlationId, questionAndAnswerData);
 //
                         populateListView();
 
@@ -97,7 +96,7 @@ public class Controller {
     }
 
     private void populateListView() {
-
+        messagesListView.getItems().clear();
         for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
             messagesListView.getItems().add(entry.getValue().toString());
         }
