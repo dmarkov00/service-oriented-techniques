@@ -6,7 +6,7 @@ import JMS.replier.QuestionAndAnswerData;
 import JMS.replier.Replier;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import org.apache.activemq.command.ActiveMQTextMessage;
@@ -17,7 +17,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.*;
 
-//import
+
 public class Controller {
     @FXML
     public ListView<String> messagesListView;
@@ -27,32 +27,42 @@ public class Controller {
 
     private Map<Message, QuestionAndAnswerData> messageData = new LinkedHashMap<>();
 
+    @FXML
     public void initialize() {
         this.listenForQuestions();
     }
 
+    @FXML
     public void buttonSendClicker() {
         String messageBody = messageField.getText();
 
         // Retrieve the index of the selected item from the list view
         int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
-        // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
-        Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
+        if (selectedItemIndex >= 0) {
+            // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
+            Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
-        // Send reply
-        replier.sendReply(messageBody, mapByIndex.getKey());
+            // Send reply
+            replier.sendReply(messageBody, mapByIndex.getKey());
 
-        // Updating the map value with the answer string
-        QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
-        updatedQuestionAndAnswerData.setAnswer(messageBody);
-        messageData.replace(mapByIndex.getKey(), updatedQuestionAndAnswerData);
+            // Updating the map value with the answer string
+            QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
+            updatedQuestionAndAnswerData.setAnswer(messageBody);
+            messageData.replace(mapByIndex.getKey(), updatedQuestionAndAnswerData);
 
-        populateListView();
-        messageField.setText("");
+            populateListView();
+            messageField.setText("");
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Select item form the list view please").show();
+        }
+
 
     }
 
+    @FXML
     public void buttonSendLibInfoClicker() {
+
+        // Serialization with gson
         LibraryInfo libraryInfo = new LibraryInfo();
         Gson gson = new Gson();
         String libraryInfoJson = gson.toJson(libraryInfo);
@@ -60,18 +70,25 @@ public class Controller {
         String messageBody = libraryInfoJson;
         // Retrieve the index of the selected item from the list view
         int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
-        // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
-        Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
-        // Send reply
-        replier.sendReply(messageBody, mapByIndex.getKey());
+        if (selectedItemIndex >= 0) {
+            // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
+            Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
-        // Updating the map value with the answer string
-        QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
-        updatedQuestionAndAnswerData.setAnswer(libraryInfo.toString());
-        messageData.replace(mapByIndex.getKey(), updatedQuestionAndAnswerData);
+            // Send reply
+            replier.sendReply(messageBody, mapByIndex.getKey());
 
-        populateListView();
+            // Updating the map value with the answer string
+            QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
+            updatedQuestionAndAnswerData.setAnswer(libraryInfo.toString());
+            messageData.replace(mapByIndex.getKey(), updatedQuestionAndAnswerData);
+
+            populateListView();
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Select item form the list view please").show();
+        }
+
+
     }
 
     private Map.Entry<Message, QuestionAndAnswerData> getPairFromLinkedHashMapByIndex(int listIndex) {
@@ -94,7 +111,9 @@ public class Controller {
             messagesListView.getItems().add(entry.getValue().toString());
         }
 
+
     }
+
 
     private void listenForQuestions() {
         Connection connection; // to connect to the JMS
@@ -122,7 +141,7 @@ public class Controller {
                     String requestorQuestion = null;
                     try {
 
-                        // Get the actual message
+                        // Get the actual message text
                         requestorQuestion = ((ActiveMQTextMessage) msg).getText();
 
                     } catch (JMSException e) {

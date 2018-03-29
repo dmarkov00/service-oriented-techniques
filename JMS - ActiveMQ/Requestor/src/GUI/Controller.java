@@ -28,6 +28,7 @@ public class Controller {
 
     public Requestor requestor = new Requestor();
 
+    @FXML
     public void buttonSendClicker() {
         // Get field text
         String messageBody = messageField.getText();
