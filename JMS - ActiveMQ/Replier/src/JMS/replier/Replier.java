@@ -10,7 +10,7 @@ import java.util.*;
 public class Replier {
 
 
-    public void sendReply(String replyMessage, String requestorMessageId) {
+    public void sendReply(String replyMessage, String requestorMessageId, Destination returnAddress) {
         Connection connection; // to connect to the ActiveMQ
         Session session; // session for creating messages, producers and
         Destination sendDestination; // reference to a queue/topic destination
@@ -36,7 +36,7 @@ public class Replier {
             Message msg = session.createTextMessage(replyMessage);
             msg.setJMSCorrelationID(requestorMessageId);
             // Send the message
-            producer.send(msg);
+            producer.send(returnAddress, msg);
         } catch (NamingException | JMSException e) {
             e.printStackTrace();
         }

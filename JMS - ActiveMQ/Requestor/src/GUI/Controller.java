@@ -1,6 +1,7 @@
 package GUI;
 
 import JMS.requestor.QuestionAndAnswerData;
+import JMS.requestor.ReplyQueue;
 import JMS.requestor.Requestor;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -48,6 +49,7 @@ public class Controller {
 
 
     private void listenForAnswers() {
+
         Connection connection; // to connect to the JMS
         Session session; // session for creating consumers
         Destination receiveDestination;    //        reference to a queue/topic destination
@@ -57,14 +59,14 @@ public class Controller {
             props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
             props.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
 
-            props.put(("queue.libraryReplyQueue"), " libraryReplyQueue");
+            props.put(("queue." + ReplyQueue.replyQueueName), ReplyQueue.replyQueueName);
             Context jndiContext = new InitialContext(props);
             ConnectionFactory connectionFactory = (ConnectionFactory) jndiContext
                     .lookup("ConnectionFactory");
             connection = connectionFactory.createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             // Connect to the receiver destination
-            receiveDestination = (Destination) jndiContext.lookup("libraryReplyQueue");
+            receiveDestination = (Destination) jndiContext.lookup(ReplyQueue.replyQueueName);
             consumer = session.createConsumer(receiveDestination);
             consumer.setMessageListener(new MessageListener() {
                 @Override

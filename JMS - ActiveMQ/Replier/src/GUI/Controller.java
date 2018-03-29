@@ -20,6 +20,7 @@ public class Controller {
     @FXML
     public TextField messageField;
     private Replier replier = new Replier();
+    private Destination replyAddress;
 
     private Map<String, QuestionAndAnswerData> messageData = new LinkedHashMap<>();
 
@@ -35,7 +36,7 @@ public class Controller {
         String requestorMessageId = mapByIndex.getKey();
 
         // Send reply
-        replier.sendReply(messageBody, requestorMessageId);
+        replier.sendReply(messageBody, requestorMessageId, replyAddress);
 
         // Updating the map value with the answer string
         QuestionAndAnswerData updatedQuestionAndAnswerData = mapByIndex.getValue();
@@ -109,12 +110,21 @@ public class Controller {
                     }
 
                     QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
-                    System.out.println(msg);
+
+                    try {
+                        replyAddress = msg.getJMSReplyTo();
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+
                     // Fill the map for later reference
                     messageData.put(messageId, qAndAData);
 
                     // Add the question to the list view
-                    messagesListView.getItems().add(qAndAData.toString());
+//                    messagesListView.getItems().add(qAndAData.toString());
+
+                    populateListView();
+
 
                 }
             });
