@@ -91,7 +91,7 @@ public class Controller {
                         // Try to deserialize if library info was sent back
                         Gson gson = new Gson();
 
-                        // If the object cannot be parsed exception is thrown, that means we are not receiving library info from the replier
+                        // If the object can not be parsed exception is thrown, that means we are not receiving library info from the replier
                         try {
                             LibraryInfo libraryInfo = gson.fromJson(replierAnswer, LibraryInfo.class);
                             replierAnswer = libraryInfo.toString();

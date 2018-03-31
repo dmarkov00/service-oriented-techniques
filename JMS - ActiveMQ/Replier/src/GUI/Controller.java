@@ -40,7 +40,7 @@ public class Controller {
         // Retrieve the index of the selected item from the list view
         int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
         if (selectedItemIndex >= 0) {
-            // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
+            // Get the map value for this index (the map values are inserted in the same order as the list view values, so the indices match)
             Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
             // Send reply
@@ -73,7 +73,7 @@ public class Controller {
         int selectedItemIndex = messagesListView.getSelectionModel().getSelectedIndex();
 
         if (selectedItemIndex >= 0) {
-            // Get the map value for this index (the map values are inserted the same way as the list view values, so the indices match)
+            // Get the map value for this index (the map values are inserted in the same order as the list view values, so the indices match)
             Map.Entry<Message, QuestionAndAnswerData> mapByIndex = this.getPairFromLinkedHashMapByIndex(selectedItemIndex);
 
             // Send reply
@@ -95,7 +95,6 @@ public class Controller {
     private Map.Entry<Message, QuestionAndAnswerData> getPairFromLinkedHashMapByIndex(int listIndex) {
         int index = 0;
         for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
-//            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
             if (index == listIndex) {
                 return entry;
             }

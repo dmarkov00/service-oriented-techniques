@@ -18,7 +18,7 @@ public class Replier {
         Destination sendDestination; // reference to a queue/topic destination
         MessageProducer producer; // for sending messages
         try {
-            // Extract the address string, from the map key, then trim it
+            // Extract the address string, from the map key, then trim it to retrieve the "clean" address string
             String addressString = requestorMessage.getJMSReplyTo().toString().substring(requestorMessage.getJMSReplyTo().toString().lastIndexOf("/") + 1);
 
 
@@ -37,7 +37,6 @@ public class Replier {
             sendDestination = requestorMessage.getJMSReplyTo();
             producer = session.createProducer(sendDestination);
 
-//        String body = messageBody; //or serialize an object!
             // Create a text message
             Message msg = session.createTextMessage(replyMessage);
             msg.setJMSCorrelationID(requestorMessage.getJMSMessageID());

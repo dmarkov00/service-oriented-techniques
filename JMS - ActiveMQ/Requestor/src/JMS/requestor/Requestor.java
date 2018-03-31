@@ -63,7 +63,7 @@ public class Requestor {
 
             QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
 
-            // Fill the map for later reference
+            // Fill the map with the new question
             messageData.put(messageId, qAndAData);
 
 
