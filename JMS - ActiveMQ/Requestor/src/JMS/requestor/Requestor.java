@@ -39,9 +39,6 @@ public class Requestor {
             Message msg = session.createTextMessage(messageBody);
 
             // Creating reply destination////////////////////////////////////////////
-            String messageId = null;
-            String requestorQuestion = null;
-
             Destination receiverDestination; // reference to a queue/topic destination
             Properties props1 = new Properties();
             props1.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
@@ -60,9 +57,9 @@ public class Requestor {
             producer.send(msg);
 
             // Retrieve message id
-            messageId = msg.getJMSMessageID();
+            String messageId = msg.getJMSMessageID();
             // Get the actual message text
-            requestorQuestion = ((ActiveMQTextMessage) msg).getText();
+            String requestorQuestion = ((ActiveMQTextMessage) msg).getText();
 
             QuestionAndAnswerData qAndAData = new QuestionAndAnswerData(requestorQuestion);
 

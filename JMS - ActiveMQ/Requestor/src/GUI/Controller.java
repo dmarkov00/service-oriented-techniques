@@ -4,6 +4,7 @@ import JMS.requestor.LibraryInfo;
 import JMS.requestor.QuestionAndAnswerData;
 import JMS.requestor.ReplyQueue;
 import JMS.requestor.Requestor;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -24,9 +25,10 @@ public class Controller {
     public ListView<String> messagesListView;
     @FXML
     public TextField messageField;
+
     private Map<String, QuestionAndAnswerData> messageData;
 
-    public Requestor requestor = new Requestor();
+    private Requestor requestor = new Requestor();
 
     @FXML
     public void buttonSendClicker() {
@@ -89,7 +91,7 @@ public class Controller {
                         // Try to deserialize if library info was sent back
                         Gson gson = new Gson();
 
-                        // If the object cannot be parsed exception is thrown, that means we are not getting library info
+                        // If the object cannot be parsed exception is thrown, that means we are not receiving library info from the replier
                         try {
                             LibraryInfo libraryInfo = gson.fromJson(replierAnswer, LibraryInfo.class);
                             replierAnswer = libraryInfo.toString();
@@ -103,6 +105,7 @@ public class Controller {
                         questionAndAnswerData.setAnswer(replierAnswer);
                         //Update the hash map with the new answer value
                         requestor.messageData.replace(correlationId, questionAndAnswerData);
+
 
                         populateListView();
 
@@ -118,10 +121,19 @@ public class Controller {
     }
 
     private void populateListView() {
-        messagesListView.getItems().clear();
-        for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
-            messagesListView.getItems().add(entry.getValue().toString());
-        }
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+
+                messagesListView.getItems().clear();
+                for (Map.Entry<String, QuestionAndAnswerData> entry : messageData.entrySet()) {
+                    messagesListView.getItems().add(entry.getValue().toString());
+                }
+
+            }
+        });
+
+
     }
 
     private QuestionAndAnswerData findQuestionByCorrelationID(String correlationID) {

@@ -5,6 +5,7 @@ import JMS.replier.LibraryInfo;
 import JMS.replier.QuestionAndAnswerData;
 import JMS.replier.Replier;
 import com.google.gson.Gson;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
@@ -106,12 +107,15 @@ public class Controller {
 
     private void populateListView() {
 
-        messagesListView.getItems().clear();
-        for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
-            messagesListView.getItems().add(entry.getValue().toString());
-        }
-
-
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                messagesListView.getItems().clear();
+                for (Map.Entry<Message, QuestionAndAnswerData> entry : messageData.entrySet()) {
+                    messagesListView.getItems().add(entry.getValue().toString());
+                }
+            }
+        });
     }
 
 
